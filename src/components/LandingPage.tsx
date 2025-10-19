@@ -48,13 +48,13 @@ function LandingPage() {
     }
   }
 
-  const contentDivClass = `flex-grow sm:p-10 p-5 sm:h-[70vh] h-[80vh] overflow-auto scrollbar-hide ${
+  const contentDivClass = `flex-grow lg:p-10 p-5 sm:h-[70vh] h-[80vh] overflow-auto scrollbar-hide ${
     animateOut ? "fade-scale-out" : "fade-scale-in"
   }`;
 
   return (
-    <div className="bg-blue-950 w-full h-screen grid grid-cols-1 sm:grid-cols-2 text-white overflow-auto">
-      <div className="relative flex flex-col justify-around  p-10 space-y-4 border-r border-white/40 sm:my-10">
+    <div className="bg-blue-950 w-full h-screen grid grid-cols-1 sm:grid-cols-2 text-white overflow-auto scrollbar-hide">
+      <div className="relative flex flex-col justify-start gap-4 lg:justify-around p-10 space-y-4 border-r border-white/40 sm:my-10">
        <div className='flex sm:flex-col justify-between items-center sm:items-start'>
         <h1 className="text-5xl font-bold">Kacey Flieder</h1>
         <FaArrowCircleDown onClick={handleScroll} className="text-2xl animate-bounce mr-5 sm:hidden block" size={64} />
@@ -69,13 +69,13 @@ function LandingPage() {
       </div>
 
       <div className="sm:pt-10 flex flex-col w-full">
-        <div className="flex sm:flex-row flex-col w-full sm:justify-between">
+        <div className="flex lg:flex-row flex-col w-full lg:justify-between lg:pb-5 border-b border-white/40 items-center">
           <h1
-            className={`sm:order-1 order-2 text-5xl sm:pl-5 pt-6 sm:pt-10 uppercase tracking-widest font-thin text-center w-full ${
+            className={`lg:order-1 order-2 text-5xl lg:pl-5 py-6 lg:py-10 uppercase tracking-widest font-thin text-center w-full ${
               animateOut ? "fade-scale-out" : "fade-scale-in"
             } ${
               activeTab !== "contact" && activeTab !== "about"
-                ? "sm:pl-10 text-6xl"
+                ? "lg:pl-10 text-6xl"
                 : ""
             } ${myFont.className}`}
           >
@@ -87,7 +87,7 @@ function LandingPage() {
               ? "About Me"
               : "Contact Me"}
           </h1>
-          <div ref={contentRef}>
+          <div ref={contentRef} className="lg:order-2 order-1">
           <NavBar setActiveTab={handleTabChange} />
           </div>
         </div>
@@ -97,7 +97,7 @@ function LandingPage() {
             <Projects />
           </div>
         ) : activeTab === "prices" ? (
-          <div ref={innerContentRef} className={`${contentDivClass} sm:pt-0`}>
+          <div ref={innerContentRef} className={`${contentDivClass} lg:pt-0`}>
            <Prices />
           </div>
         ) : activeTab === "about" ? (

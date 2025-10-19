@@ -13,9 +13,9 @@ function NavBar({setActiveTab}: {setActiveTab?: (tab: 'projects' | 'prices' | 'a
     const inactiveTabStyles = "block rounded opacity-80 hover:opacity-100 transform hover:scale-105 active:scale-110 transition duration-200 cursor-pointer w-full text-right ";
 
   return (
-    <div className="flex justify-center text-white sm:py-4 sm:w-34 pr-4 sm:order-2 order-1">
-      <nav className="h-full flex sm:flex-col" aria-label="Primary">
-         <ul className="flex sm:flex-col gap-2 justify-end">
+    <div className="flex justify-center text-white lg:py-4 lg:w-34 lg:pr-4">
+      <nav className="h-full flex lg:flex-col" aria-label="Primary">
+         <ul className="flex lg:flex-col gap-2 justify-end">
           <li>
             <button
               onClick={() => {handleTabClick('projects')}}
