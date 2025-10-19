@@ -87,7 +87,7 @@ function LandingPage() {
               ? "About Me"
               : "Contact Me"}
           </h1>
-          <div ref={contentRef} className="lg:order-2 order-1">
+          <div ref={contentRef} className="lg:order-2 order-1 sm:p-0 p-10">
           <NavBar setActiveTab={handleTabChange} />
           </div>
         </div>
