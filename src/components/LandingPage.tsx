@@ -87,9 +87,11 @@ function LandingPage() {
               ? "About Me"
               : "Contact Me"}
           </h1>
+          <div ref={contentRef}>
           <NavBar setActiveTab={handleTabChange} />
+          </div>
         </div>
-        <div ref={contentRef}>
+        
         {activeTab === "projects" ? (
           <div ref={innerContentRef} className={contentDivClass}>
             <Projects />
@@ -107,7 +109,7 @@ function LandingPage() {
             <Contact />
           </div>
         )}
-        </div>
+        
       </div>
     </div>
   );
