@@ -2,7 +2,7 @@ import React from 'react'
 
 function TechStack() {
   return (
-    <div className="rounded-xl border border-white/10 bg-white/5 p-5 shadow-md shadow-black/20 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:shadow-xl">
+    <div id='techstack' className="rounded-xl border border-white/10 bg-white/5 p-5 shadow-md shadow-black/20 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:shadow-xl">
                 <div className="mb-3 flex items-center justify-between">
                   <h3 className="text-lg font-semibold">Tech Stack</h3>
                   <span className="h-2 w-2 rounded-full bg-emerald-400/80 shadow-[0_0_8px] shadow-emerald-400/60" aria-hidden="true" />

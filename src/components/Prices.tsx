@@ -145,6 +145,7 @@ const addOns = [
     <>
       {packages.map((pkg) => (
         <div
+          id={`package-${pkg.title}`}
           key={pkg.title}
           className="mb-4 rounded-xl border border-white/15 bg-white/5 px-6 pt-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:bg-white/10"
         >

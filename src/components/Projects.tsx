@@ -33,7 +33,7 @@ function Projects() {
   return (
     <>
       {projects.map((project, index) => (
-        <div key={index} className="mb-8 p-4 border border-white/20 rounded-lg hover:shadow-lg transition-shadow duration-300">
+        <div id={`project-${index}`} key={index} className="mb-8 p-4 border border-white/20 rounded-lg hover:shadow-lg transition-shadow duration-300">
             <a
             href={project.link}
             target="_blank"

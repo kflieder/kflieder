@@ -93,11 +93,11 @@ function LandingPage() {
         </div>
         
         {activeTab === "projects" ? (
-          <div ref={innerContentRef} className={contentDivClass}>
+          <div id="projects" ref={innerContentRef} className={contentDivClass}>
             <Projects />
           </div>
         ) : activeTab === "prices" ? (
-          <div ref={innerContentRef} className={`${contentDivClass} lg:pt-0`}>
+          <div id="prices" ref={innerContentRef} className={`${contentDivClass} lg:pt-0`}>
            <Prices />
           </div>
         ) : activeTab === "about" ? (

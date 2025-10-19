@@ -2,7 +2,7 @@ import React from "react";
 
 function WhatsApp() {
   return (
-    <div>
+    <div id='whatsapp'>
       <a
         href="https://wa.me/+529991744413"
         target="_blank"

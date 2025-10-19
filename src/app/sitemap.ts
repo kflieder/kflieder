@@ -10,5 +10,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1.0,
     },
+    { url: `${baseUrl}/#about` },
+    { url: `${baseUrl}/#projects` },
+    { url: `${baseUrl}/#contact` },
+    { url: `${baseUrl}/#prices` },
+    { url: `${baseUrl}/#whatsapp` },
+    { url: `${baseUrl}/#socials` },
+    { url: `${baseUrl}/#techstack` },
   ];
 }
