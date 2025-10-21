@@ -1,0 +1,223 @@
+{
+  "role": "Full Stack Developer",
+  "role_es": "Desarrolladora Full Stack",
+
+  "projects": "Projects",
+  "projects_es": "Proyectos",
+
+  "prices": "Pricing",
+  "prices_es": "Precios",
+
+  "about": "About Me",
+  "about_es": "Sobre Mí",
+
+  "contact": "Contact Me",
+  "contact_es": "Contáctame",
+
+  "whatsapp_cta": "Chat on WhatsApp",
+  "whatsapp_cta_es": "Chatear en WhatsApp",
+
+  "techstack_title": "Tech Stack",
+  "techstack_title_es": "Tecnologías",
+
+  "socials_title": "Connect with Me",
+  "socials_title_es": "Conéctate Conmigo",
+  "about_text": "<p class='tracking-wide pt-8'>Hey! I’m Kacey, a full stack developer, artist, and all-around creative human currently based in Mexico. I’ve always been fascinated by technology, but it wasn’t until I moved to Mexico that I finally had the space, time, and energy to really dive into coding.<br /><br />I started by building free websites for local businesses and friends, and quickly realized that creating digital experiences is where my passion truly comes alive. Now, I freelance full-time, helping others bring their ideas to life through clean design and functional web apps.<br /><br />When I’m not coding, you’ll probably find me sketching in charcoal, experimenting with pastel and paint, or jamming out on an instrument. I play saxophone and trombone (though it’s been a while 😅), and lately I’ve been learning to play drums — because apparently, rhythm follows me everywhere. I’m also a language nerd, both human and computer. I’m fairly fluent in Spanish (getting better every day), and I love how coding languages and spoken languages both shape the way we think and connect with others.</p>",
+  "about_text_es": "<p class='tracking-wide pt-8'>¡Hola! Soy Kacey, desarrolladora full stack, artista y creativa multifacética que actualmente vive en México. Siempre me ha fascinado la tecnología, pero no fue hasta que me mudé a México que finalmente tuve el espacio, el tiempo y la energía para profundizar en la programación.<br /><br />Comencé creando sitios web gratuitos para negocios locales y amigos, y rápidamente me di cuenta de que crear experiencias digitales es donde realmente cobra vida mi pasión. Ahora trabajo como freelance a tiempo completo, ayudando a otros a dar vida a sus ideas a través de diseños limpios y aplicaciones web funcionales.<br /><br />Cuando no estoy programando, probablemente me encontrarás dibujando con carbón, experimentando con pastel o pintura, o tocando algún instrumento. Toco saxofón y trombón (aunque hace tiempo 😅), y últimamente he estado aprendiendo batería — porque aparentemente, el ritmo me persigue a todos lados. También soy una nerd de los idiomas, tanto humanos como de programación. Hablo español con bastante fluidez (¡mejorando cada día!), y me encanta cómo los lenguajes de programación y los hablados moldean la forma en que pensamos y nos conectamos con los demás.</p>",
+  "landing_title": "Landing Page",
+  "landing_title_es": "Página de Aterrizaje",
+
+  "landing_desc": "Perfect for individuals or small businesses who need a sleek, single-page presence.",
+  "landing_desc_es": "Perfecta para individuos o pequeños negocios que necesitan una presencia elegante y de una sola página.",
+
+  "landing_features_1": "1 fully responsive page",
+  "landing_features_1_es": "1 página totalmente responsiva",
+
+  "landing_features_2": "Custom design with your branding",
+  "landing_features_2_es": "Diseño personalizado con tu marca",
+
+  "landing_features_3": "Contact form or call-to-action button",
+  "landing_features_3_es": "Formulario de contacto o botón de llamada a la acción",
+
+  "landing_features_4": "Deployed and hosted (Vercel)",
+  "landing_features_4_es": "Implementada y alojada (Vercel)",
+
+  "landing_features_5": "1 round of revisions included",
+  "landing_features_5_es": "1 ronda de revisiones incluida",
+
+  "multi_title": "Multi-Page Website",
+  "multi_title_es": "Sitio Web Multipágina",
+
+  "multi_desc": "Ideal for growing businesses that need multiple pages for services, portfolios, or content.",
+  "multi_desc_es": "Ideal para negocios en crecimiento que necesitan varias páginas para servicios, portafolios o contenido.",
+
+  "multi_features_1": "Up to 3 custom pages",
+  "multi_features_1_es": "Hasta 3 páginas personalizadas",
+
+  "multi_features_2": "Navigation bar + page routing",
+  "multi_features_2_es": "Barra de navegación y enrutamiento entre páginas",
+
+  "multi_features_3": "Responsive design for all devices",
+  "multi_features_3_es": "Diseño responsivo para todos los dispositivos",
+
+  "multi_features_4": "SEO optimization setup",
+  "multi_features_4_es": "Configuración básica de SEO",
+
+  "multi_features_5": "Integrated contact form",
+  "multi_features_5_es": "Formulario de contacto integrado",
+
+  "multi_features_6": "2 rounds of revisions included",
+  "multi_features_6_es": "2 rondas de revisiones incluidas",
+
+  "ecom_title": "E-commerce Website",
+  "ecom_title_es": "Sitio Web de Comercio Electrónico",
+
+  "ecom_desc": "A complete online store setup for selling products with secure payments and modern design.",
+  "ecom_desc_es": "Una tienda en línea completa para vender productos con pagos seguros y un diseño moderno.",
+
+  "ecom_features_1": "1 home page + product page with up to 40 products",
+  "ecom_features_1_es": "1 página principal + página de productos con hasta 40 productos",
+
+  "ecom_features_2": "Product listings and categories",
+  "ecom_features_2_es": "Listados de productos y categorías",
+
+  "ecom_features_3": "Shopping cart functionality",
+  "ecom_features_3_es": "Funcionalidad de carrito de compras",
+
+  "ecom_features_4": "Stripe integration",
+  "ecom_features_4_es": "Integración con Stripe",
+
+  "ecom_features_5": "Customer checkout + order confirmation",
+  "ecom_features_5_es": "Proceso de compra y confirmación de pedido",
+
+  "ecom_features_6": "Deployed and configured for production",
+  "ecom_features_6_es": "Implementada y configurada para producción",
+
+  "ecom_features_7": "3 rounds of revisions included",
+  "ecom_features_7_es": "3 rondas de revisiones incluidas",
+
+  "extra_page_title": "Extra Page",
+  "extra_page_title_es": "Página Extra",
+  "extra_page_price": 25,
+  "extra_page_price_es": 500,
+  "extra_page_desc": "Add an extra page to your site — perfect for FAQs, galleries, or brand stories.",
+  "extra_page_desc_es": "Agrega una página extra a tu sitio — perfecta para preguntas frecuentes, galerías o historias de la marca.",
+
+  "extra_products_title": "Extra Products",
+  "extra_products_title_es": "Productos Extra",
+  "extra_products_price": 15,
+  "extra_products_price_es": 300,
+  "extra_products_desc": "Expand your product catalog easily with batches of 10 new items.",
+  "extra_products_desc_es": "Amplía tu catálogo de productos fácilmente con lotes de 10 nuevos artículos.",
+  "extra_products_unit": "per 10 products",
+  "extra_products_unit_es": "por 10 productos",
+
+  "seo_title": "Monthly SEO Optimization",
+  "seo_title_es": "Optimización SEO Mensual",
+  "seo_price": 25,
+  "seo_price_es": 500,
+  "seo_desc": "Continuous SEO tuning — keywords, meta descriptions, and speed optimization.",
+  "seo_desc_es": "Ajustes continuos de SEO — palabras clave, meta descripciones y optimización de velocidad.",
+  "seo_billing": "monthly",
+  "seo_billing_es": "mensual",
+
+  "extra_revisions_title": "Extra Revisions",
+  "extra_revisions_title_es": "Revisiones Extra",
+  "extra_revisions_price": "Custom",
+  "extra_revisions_price_es": "Personalizado",
+  "extra_revisions_desc": "Pricing depends on the complexity of the changes — content vs. layout.",
+  "extra_revisions_desc_es": "El precio depende de la complejidad de los cambios — contenido vs. diseño.",
+  "custom": "Custom",
+  "custom_es": "Personalizado",
+
+  "custom_animations_title": "Custom Animations / Effects",
+  "custom_animations_title_es": "Animaciones / Efectos Personalizados",
+  "custom_animations_priceRange": "20–50",
+  "custom_animations_priceRange_es": "400–1000",
+  "custom_animations_desc": "Bring your site to life with subtle hover effects and motion animations.",
+  "custom_animations_desc_es": "Da vida a tu sitio con efectos sutiles al pasar el cursor y animaciones de movimiento.",
+
+  "blog_integration_title": "Blog Integration",
+  "blog_integration_title_es": "Integración de Blog",
+  "blog_integration_price": 40,
+  "blog_integration_price_es": 800,
+  "blog_integration_desc": "Add a full blog section for news, updates, or SEO-rich content.",
+  "blog_integration_desc_es": "Agrega una sección completa de blog para noticias, actualizaciones o contenido optimizado para SEO.",
+
+  "logo_banner_title": "Basic Logo or Banner Design",
+  "logo_banner_title_es": "Diseño Básico de Logo o Banner",
+  "logo_banner_price": 30,
+  "logo_banner_price_es": 600,
+  "logo_banner_desc": "Simple, clean visuals that align perfectly with your website’s aesthetic.",
+  "logo_banner_desc_es": "Visuales simples y limpios que se alinean perfectamente con la estética de tu sitio web.",
+
+  "maintenance_title": "Maintenance & Updates",
+  "maintenance_title_es": "Mantenimiento y Actualizaciones",
+  "maintenance_price": 30,
+  "maintenance_price_es": 600,
+  "maintenance_desc": "Regular site updates, backups, and security monitoring.",
+  "maintenance_desc_es": "Actualizaciones regulares del sitio, copias de seguridad y monitoreo de seguridad.",
+  "maintenance_billing": "monthly",
+  "maintenance_billing_es": "mensual",
+
+  "domain_hosting_title": "Domain + Hosting Setup",
+  "domain_hosting_title_es": "Configuración de Dominio + Hosting",
+  "domain_hosting_price": 20,
+  "domain_hosting_price_es": 400,
+  "domain_hosting_desc": "Get your domain and hosting connected — fully handled for you. (Unless you choose Vercel free plan, that is included in the package prices.)",
+  "domain_hosting_desc_es": "Conecta tu dominio y hosting — completamente gestionado por nosotros. (A menos que elijas el plan gratuito de Vercel, que ya está incluido en los precios del paquete.)",
+
+  "email_form_title": "Email / Contact Form Integration",
+  "email_form_title_es": "Integración de Email / Formulario de Contacto",
+  "email_form_price": 20,
+  "email_form_price_es": 400,
+  "email_form_desc": "Seamlessly connects your site’s forms to your email or CRM.",
+  "email_form_desc_es": "Conecta los formularios de tu sitio de forma fluida a tu correo electrónico o CRM.",
+
+  "translation_setup_title": "Language Translation Setup",
+  "translation_setup_title_es": "Configuración de Traducción de Idiomas",
+  "translation_setup_price": 30,
+  "translation_setup_price_es": 600,
+  "translation_setup_desc": "Add multi-language functionality for international visitors.",
+  "translation_setup_desc_es": "Agrega funcionalidad multilingüe para visitantes internacionales.",
+
+  "analytics_pixel_title": "Google Analytics + Meta Pixel Setup",
+  "analytics_pixel_title_es": "Configuración de Google Analytics + Meta Pixel",
+  "analytics_pixel_price": 15,
+  "analytics_pixel_price_es": 300,
+  "analytics_pixel_desc": "Track traffic and conversions with Google and Meta tracking tools.",
+  "analytics_pixel_desc_es": "Rastrea tráfico y conversiones con las herramientas de seguimiento de Google y Meta.",
+  "currency": "USD",
+  "currency_es": "MXN",
+  "monthly": "monthly",
+  "monthly_es": "mensual",
+  "per_10_products": "per 10 products",
+  "per_10_products_es": "por 10 productos",
+  "project_ecom_title": "E-commerce Website",
+  "project_ecom_title_es": "Tienda en Línea",
+  "project_ecom_desc": "Online store selling artisan bags, clothing, and pillows. Built with React, Tailwind CSS, Firebase, and Stripe. Features include product listings, shopping cart, and secure checkout using stripe integration.",
+  "project_ecom_desc_es": "Tienda en línea que vende bolsos artesanales, ropa y almohadas. Construida con React, Tailwind CSS, Firebase y Stripe. Incluye listados de productos, carrito de compras y pago seguro mediante Stripe.",
+  "project_ecom_link": "https://lisa-kabila.vercel.app/",
+  "project_ecom_image": "/lisa-kabila.png",
+
+  "project_yournook_title": "yourNook.app",
+  "project_yournook_title_es": "yourNook.app",
+  "project_yournook_desc": "A social media platform that features 3 infinite scroll feeds: Posts, Blogs, and Discussion Threads. Built with next.js, Tailwind CSS, and Firebase for authentication and data storage.",
+  "project_yournook_desc_es": "Una plataforma de redes sociales que cuenta con 3 feeds de desplazamiento infinito: Publicaciones, Blogs y Hilos de Discusión. Construida con next.js, Tailwind CSS y Firebase para autenticación y almacenamiento de datos.",
+  "project_yournook_link": "https://www.yournook.app",
+  "project_yournook_image": "/feedPage.png",
+
+  "project_portfolio_title": "Portfolio Landing Page",
+  "project_portfolio_title_es": "Página de Portafolio",
+  "project_portfolio_desc": "A personal portfolio landing page showcasing a photographer. Built with HTML, CSS, and JavaScript. Features include image galleries, about me section, and contact form.",
+  "project_portfolio_desc_es": "Una página de portafolio personal que muestra un fotógrafo. Construida con HTML, CSS y JavaScript. Incluye galerías de imágenes, sección sobre mí y formulario de contacto.",
+  "project_portfolio_link": "https://kflieder.github.io/PhotographerPortfolio/",
+  "project_portfolio_image": "/photoHome.png",
+
+  "project_fitness_title": "Fitness Instructors Landing Page",
+  "project_fitness_title_es": "Página de Entrenador Fitness",
+  "project_fitness_desc": "A landing page for a fitness instructor to showcase their services and attract clients. Built with html, css, and javascript. Features include service listings, testimonials, and contact form.",
+  "project_fitness_desc_es": "Una página de aterrizaje para un instructor de fitness para mostrar sus servicios y atraer clientes. Construida con HTML, CSS y JavaScript. Incluye listados de servicios, testimonios y formulario de contacto.",
+  "project_fitness_link": "https://kflieder.github.io/Fitness-Trainer/",
+  "project_fitness_image": "/fitnessHome.png"
+}

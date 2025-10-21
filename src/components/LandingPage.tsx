@@ -10,6 +10,7 @@ import About from "./About";
 import Contact from "./Contact";
 import { FaArrowCircleDown } from "react-icons/fa";
 import WhatsApp from "./WhatsApp";
+import { useLanguage } from "@/context/LanguageContext";
 
 const myFont = Barlow({
   subsets: ["latin"],
@@ -23,7 +24,7 @@ function LandingPage() {
   const [animateOut, setAnimateOut] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const innerContentRef = useRef<HTMLDivElement>(null);
- 
+  const { lang, toggleLanguage, t } = useLanguage();
 
   const handleTabChange = (
     newTab: "projects" | "prices" | "about" | "contact"
@@ -53,20 +54,36 @@ function LandingPage() {
   }`;
 
   return (
-    <div className="bg-blue-950 w-full h-screen grid grid-cols-1 sm:grid-cols-2 text-white overflow-auto scrollbar-hide">
-      <div className="relative flex flex-col justify-start gap-4 lg:justify-around p-10 space-y-4 border-r border-white/40 sm:my-10">
-       <div className='flex sm:flex-col justify-between items-center sm:items-start'>
-        <h1 className="text-5xl font-bold">Kacey Flieder</h1>
-        <FaArrowCircleDown onClick={handleScroll} className="text-2xl animate-bounce mr-5 sm:hidden block" size={64} />
-        <h2 className="text-2xl opacity-90 sm:block hidden">Full Stack Developer</h2>
+    <div className="relative bg-blue-950 w-full h-screen grid grid-cols-1 sm:grid-cols-2 text-white overflow-auto scrollbar-hide">
+      <div className="relative flex flex-col justify-start gap-4 lg:justify-around p-10 border-r border-white/40 sm:my-10">
+        <div className="flex sm:flex-col justify-between items-center sm:items-start w-full">
+          <h1 className="text-5xl font-bold w-auto shrink-0">
+            Kacey <br /> Flieder
+          </h1>
+          <FaArrowCircleDown
+            onClick={handleScroll}
+            className="text-2xl animate-bounce sm:hidden flex mr-"
+            size={54}
+          />
+          <h2 className="text-2xl opacity-90 sm:block hidden">
+            {t("role", lang)}
+          </h2>
         </div>
-        <h2 className="text-2xl opacity-90 sm:hidden block">Full Stack Developer</h2>
+        <h2 className="text-2xl opacity-90 sm:hidden block">
+          {t("role", lang)}
+        </h2>
         <div>
-        <WhatsApp />
-        </div>
+          <WhatsApp />
+        </div> 
         <TechStack />
         <Socials />
       </div>
+      <button
+        onClick={toggleLanguage}
+        className="underline underline-offset-4 absolute top-2 right-5 sm:right-8 z-10 cursor-pointer"
+      >
+        {lang === "es" ? "English" : "Español"}
+      </button>
 
       <div className="sm:pt-10 flex flex-col w-full">
         <div className="flex lg:flex-row flex-col w-full lg:justify-between lg:pb-5 border-b border-white/40 items-center">
@@ -80,25 +97,29 @@ function LandingPage() {
             } ${myFont.className}`}
           >
             {activeTab === "projects"
-              ? "Projects"
+              ? t("projects", lang)
               : activeTab === "prices"
-              ? "Pricing"
+              ? t("prices", lang)
               : activeTab === "about"
-              ? "About Me"
-              : "Contact Me"}
+              ? t("about", lang)
+              : t("contact", lang)}
           </h1>
           <div ref={contentRef} className="lg:order-2 order-1 sm:pt-0 pt-10">
-          <NavBar setActiveTab={handleTabChange} />
+            <NavBar setActiveTab={handleTabChange} />
           </div>
         </div>
-        
+
         {activeTab === "projects" ? (
           <div id="projects" ref={innerContentRef} className={contentDivClass}>
             <Projects />
           </div>
         ) : activeTab === "prices" ? (
-          <div id="prices" ref={innerContentRef} className={`${contentDivClass} lg:pt-0`}>
-           <Prices />
+          <div
+            id="prices"
+            ref={innerContentRef}
+            className={`${contentDivClass}`}
+          >
+            <Prices />
           </div>
         ) : activeTab === "about" ? (
           <div ref={innerContentRef} className={contentDivClass}>
@@ -109,7 +130,6 @@ function LandingPage() {
             <Contact />
           </div>
         )}
-        
       </div>
     </div>
   );

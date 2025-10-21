@@ -1,57 +1,60 @@
 "use client";
 import React, { useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 function Prices() {
+  const { t, lang } = useLanguage();
+
   const packages = [
     {
-      title: "Landing Page",
+      title: t('landing_title', lang),
       price: {
         usd: 25,
         mxn: 500,
       },
       description:
-        "Perfect for individuals or small businesses who need a sleek, single-page presence.",
+        t('landing_desc', lang),
       features: [
-        "1 fully responsive page",
-        "Custom design with your branding",
-        "Contact form or call-to-action button",
-        "Deployed and hosted (Vercel)",
-        "1 round of revisions included",
+        t('landing_features_1', lang),
+        t('landing_features_2', lang),
+        t('landing_features_3', lang),
+        t('landing_features_4', lang),
+        t('landing_features_5', lang),
       ],
     },
     {
-      title: "Multi-Page Website",
+      title: t('multi_title', lang),
       price: {
         usd: "50–100",
         mxn: "1000–2000",
       },
       description:
-        "Ideal for growing businesses that need multiple pages for services, portfolios, or content.",
+        t('multi_desc', lang),
       features: [
-        "Up to 3 custom pages",
-        "Navigation bar + page routing",
-        "Responsive design for all devices",
-        "SEO optimization setup",
-        "Integrated contact form",
-        "2 rounds of revisions included",
+        t('multi_features_1', lang),
+        t('multi_features_2', lang),
+        t('multi_features_3', lang),
+        t('multi_features_4', lang),
+        t('multi_features_5', lang),
+        t('multi_features_6', lang),
       ],
     },
     {
-      title: "E-commerce Website",
+      title: t('ecom_title', lang),
       price: {
         usd: 250,
         mxn: 5000,
       },
       description:
-        "A complete online store setup for selling products with secure payments and modern design.",
+        t('ecom_desc', lang),
       features: [
-        "1 home page + product page with up to 40 products",
-        "Product listings and categories",
-        "Shopping cart functionality",
-        "Stripe integration",
-        "Customer checkout + order confirmation",
-        "Deployed and configured for production",
-        "3 rounds of revisions included",
+        t('ecom_features_1', lang),
+        t('ecom_features_2', lang),
+        t('ecom_features_3', lang),
+        t('ecom_features_4', lang),
+        t('ecom_features_5', lang),
+        t('ecom_features_6', lang),
+        t('ecom_features_7', lang),
       ],
     },
   ];
@@ -59,78 +62,78 @@ function Prices() {
   
 const addOns = [
   {
-    title: "Extra Page",
-    price: 25,
-    currency: "USD",
-    description: "Add an extra page to your site — perfect for FAQs, galleries, or brand stories."
+    title: t('extra_page_title', lang),
+    price: t('extra_page_price', lang),
+    currency: t('currency', lang),
+    description: t('extra_page_desc', lang)
   },
   {
-    title: "Extra Products",
-    price: 15,
-    unit: "per 10 products",
-    currency: "USD",
-    description: "Expand your product catalog easily with batches of 10 new items."
+    title: t('extra_products_title', lang),
+    price: t('extra_products_price', lang),
+    unit: t('per_10_products', lang),
+    currency: t('currency', lang),
+    description: t('extra_products_desc', lang)
   },
   {
-    title: "Monthly SEO Optimization",
-    price: 25,
-    billing: "monthly",
-    currency: "USD",
-    description: "Continuous SEO tuning — keywords, meta descriptions, and speed optimization."
+    title: t('seo_title', lang),
+    price: t('seo_price', lang),
+    billing: t('monthly', lang),
+    currency: t('currency', lang),
+    description: t('seo_desc', lang)
   },
   {
-    title: "Extra Revisions",
-    price: "Custom",
-    description: "Pricing depends on the complexity of the changes — content vs. layout."
+    title: t('extra_revisions_title', lang),
+    price: t('custom', lang),
+    description: t('extra_revisions_desc', lang)
   },
   {
-    title: "Custom Animations / Effects",
-    priceRange: "20–50",
-    currency: "USD",
-    description: "Bring your site to life with subtle hover effects and motion animations."
+    title: t('custom_animations_title', lang),
+    priceRange: t('custom_animations_priceRange', lang),
+    currency: t('currency', lang),
+    description: t('custom_animations_desc', lang)
   },
   {
-    title: "Blog Integration",
-    price: 40,
-    currency: "USD",
-    description: "Add a full blog section for news, updates, or SEO-rich content."
+    title: t('blog_integration_title', lang),
+    price: t('blog_integration_price', lang),
+    currency: t('currency', lang),
+    description: t('blog_integration_desc', lang)
   },
   {
-    title: "Basic Logo or Banner Design",
-    price: 30,
-    currency: "USD",
-    description: "Simple, clean visuals that align perfectly with your website’s aesthetic."
+    title: t('logo_banner_title', lang),
+    price: t('logo_banner_price', lang),
+    currency: t('currency', lang),
+    description: t('logo_banner_desc', lang)
   },
   {
-    title: "Maintenance & Updates",
-    price: 30,
-    billing: "monthly",
-    currency: "USD",
-    description: "Regular site updates, backups, and security monitoring."
+    title: t('maintenance_title', lang),
+    price: t('maintenance_price', lang),
+    billing: t('monthly', lang),
+    currency: t('currency', lang),
+    description: t('maintenance_desc', lang)
   },
   {
-    title: "Domain + Hosting Setup",
-    price: 20,
-    currency: "USD",
-    description: "Get your domain and hosting connected — fully handled for you. (Unless you choose Vercel free plan, that is included in the package prices.)"
+    title: t('domain_hosting_title', lang),
+    price: t('domain_hosting_price', lang),
+    currency: t('currency', lang),
+    description: t('domain_hosting_desc', lang)
   },
   {
-    title: "Email / Contact Form Integration",
-    price: 20,
-    currency: "USD",
-    description: "Seamlessly connects your site’s forms to your email or CRM."
+    title: t('email_form_title', lang),
+    price: t('email_form_price', lang),
+    currency: t('currency', lang),
+    description: t('email_form_desc', lang)
   },
   {
-    title: "Language Translation Setup",
-    price: 30,
-    currency: "USD",
-    description: "Add multi-language functionality for international visitors."
+    title: t('translation_setup_title', lang),
+    price: t('translation_setup_price', lang),
+    currency: t('currency', lang),
+    description: t('translation_setup_desc', lang)
   },
   {
-    title: "Google Analytics + Meta Pixel Setup",
-    price: 15,
-    currency: "USD",
-    description: "Track traffic and conversions with Google and Meta tracking tools."
+    title: t('analytics_pixel_title', lang),
+    price: t('analytics_pixel_price', lang),
+    currency: t('currency', lang),
+    description: t('analytics_pixel_desc', lang)
   }
 ];
 
@@ -218,6 +221,12 @@ const addOns = [
                     ) : (
                       <span className="text-emerald-300">{addon.price} {addon.currency}</span>
                     )}
+                    {
+                      addon.billing && <span className="text-xs text-white/70">({addon.billing})</span>
+                    }
+                    {
+                      addon.unit && <span className="text-xs text-white/70">({addon.unit})</span>
+                    }
                   </div>
                 </div>
                 

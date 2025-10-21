@@ -1,29 +1,32 @@
 import React from 'react'
+import { useLanguage } from '@/context/LanguageContext';
 
 function Projects() {
 
+  const { t, lang } = useLanguage();
+
   const projects = [
     {
-      title: "E-commerce Website",
-      description: "Online store selling artisan bags, clothing, and pillows. Built with React, Tailwind CSS, Firebase, and Stripe. Features include product listings, shopping cart, and secure checkout using stripe integration.",
+      title: t("project_ecom_title", lang),
+      description: t("project_ecom_desc", lang),
       link: "https://lisa-kabila.vercel.app/",
-      imageSrc: "/lisa-kabila.png",
+      imageSrc: '/lisa-kabila.png',
     },
     {
-      title: "yourNook.app",
-      description: "A social media platform that features 3 infinite scroll feeds: Posts, Blogs, and Discussion Threads. Built with next.js, Tailwind CSS, and Firebase for authentication and data storage.",
+      title: t("project_yournook_title", lang),
+      description: t("project_yournook_desc", lang),
       link: "https://www.yournook.app",
       imageSrc: "/feedPage.png",
     },
     {
-      title: "Portfolio Landing Page",
-      description: "A personal portfolio landing page showcasing a photographer. Built with HTML, CSS, and JavaScript. Features include image galleries, about me section, and contact form.",
+      title: t("project_portfolio_title", lang),
+      description: t("project_portfolio_desc", lang),
       link: "https://kflieder.github.io/PhotographerPortfolio/",
       imageSrc: "/photoHome.png",
     },
     {
-      title: "Fitness Instructors Landing Page",
-      description: "A landing page for a fitness instructor to showcase their services and attract clients. Built with html, css, and javascript. Features include service listings, testimonials, and contact form.",
+      title: t("project_fitness_title", lang),
+      description: t("project_fitness_desc", lang),
       link: "https://kflieder.github.io/Fitness-Trainer/",
       imageSrc: "/fitnessHome.png",
     }

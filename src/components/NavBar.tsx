@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import { useLanguage } from '@/context/LanguageContext';
 
 function NavBar({setActiveTab}: {setActiveTab?: (tab: 'projects' | 'prices' | 'about' | 'contact') => void}) {
     const [activeLocalTab, setLocalActiveTab] = useState<'projects' | 'prices' | 'about' | 'contact'>('projects');
-
+    const { lang, t } = useLanguage();
     function handleTabClick(tab: 'projects' | 'prices' | 'about' | 'contact') {
         setLocalActiveTab(tab);
         setActiveTab?.(tab);
@@ -21,7 +22,7 @@ function NavBar({setActiveTab}: {setActiveTab?: (tab: 'projects' | 'prices' | 'a
               onClick={() => {handleTabClick('projects')}}
               className={`${inactiveTabStyles} ${activeLocalTab === 'projects' ? activeTabStyles : ''}`}
             >
-              Projects
+              {t('projects', lang)}
             </button>
           </li>
           <li>
@@ -29,7 +30,7 @@ function NavBar({setActiveTab}: {setActiveTab?: (tab: 'projects' | 'prices' | 'a
               onClick={() => {handleTabClick('prices')}}
               className={`${inactiveTabStyles} ${activeLocalTab === 'prices' ? activeTabStyles : ''}`}
             >
-              Prices
+              {t('prices', lang)}
             </button>
           </li>
           <li>
@@ -37,7 +38,7 @@ function NavBar({setActiveTab}: {setActiveTab?: (tab: 'projects' | 'prices' | 'a
               onClick={() => {handleTabClick('about')}}
               className={`${inactiveTabStyles} ${activeLocalTab === 'about' ? activeTabStyles : ''}`}
             >
-              About
+              {t('about', lang)}
             </button>
           </li>
           <li>
@@ -45,7 +46,7 @@ function NavBar({setActiveTab}: {setActiveTab?: (tab: 'projects' | 'prices' | 'a
               onClick={() => {handleTabClick('contact')}}
               className={`${inactiveTabStyles} ${activeLocalTab === 'contact' ? activeTabStyles : ''}`}
             >
-              Contact Me
+              {t('contact', lang)}
             </button>
           </li>
         </ul>
