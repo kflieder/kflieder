@@ -35,6 +35,25 @@ export const metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  keywords: [
+    "Kacey Flieder",
+    "Full Stack Developer",
+    "Web Developer",
+    "React",
+    "Next.js",
+    "JavaScript",
+    "TypeScript",
+    "Node.js",
+    "Frontend Developer",
+    "Backend Developer",
+    "Web Applications",
+    "Software Engineer",
+    "Programming",
+    "Coding",
+    "Web Design",
+    "Digital Solutions",
+    "Developer Portfolio",
+  ],
 };
 
 
