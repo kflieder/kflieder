@@ -2,15 +2,15 @@
 import React, { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
-function Prices() {
+function Prices({setActiveTab}: {setActiveTab: (tab: 'projects' | 'prices' | 'about' | 'contact') => void}) {
   const { t, lang } = useLanguage();
 
   const packages = [
     {
       title: t('landing_title', lang),
       price: {
-        usd: 25,
-        mxn: 500,
+        usd: "100",
+        mxn: "1,800",
       },
       description:
         t('landing_desc', lang),
@@ -25,8 +25,8 @@ function Prices() {
     {
       title: t('multi_title', lang),
       price: {
-        usd: "50–100",
-        mxn: "1000–2000",
+        usd: "200–400",
+        mxn: "3,600–7,200",
       },
       description:
         t('multi_desc', lang),
@@ -42,8 +42,8 @@ function Prices() {
     {
       title: t('ecom_title', lang),
       price: {
-        usd: 250,
-        mxn: 5000,
+        usd: "400",
+        mxn: "7,200",
       },
       description:
         t('ecom_desc', lang),
@@ -63,75 +63,63 @@ function Prices() {
 const addOns = [
   {
     title: t('extra_page_title', lang),
-    price: t('extra_page_price', lang),
     currency: t('currency', lang),
     description: t('extra_page_desc', lang)
   },
   {
     title: t('extra_products_title', lang),
-    price: t('extra_products_price', lang),
     unit: t('per_10_products', lang),
     currency: t('currency', lang),
     description: t('extra_products_desc', lang)
   },
   {
     title: t('seo_title', lang),
-    price: t('seo_price', lang),
     billing: t('monthly', lang),
     currency: t('currency', lang),
     description: t('seo_desc', lang)
   },
   {
     title: t('extra_revisions_title', lang),
-    price: t('custom', lang),
     description: t('extra_revisions_desc', lang)
   },
   {
     title: t('custom_animations_title', lang),
-    priceRange: t('custom_animations_priceRange', lang),
     currency: t('currency', lang),
     description: t('custom_animations_desc', lang)
   },
   {
     title: t('blog_integration_title', lang),
-    price: t('blog_integration_price', lang),
     currency: t('currency', lang),
     description: t('blog_integration_desc', lang)
   },
-  {
-    title: t('logo_banner_title', lang),
-    price: t('logo_banner_price', lang),
-    currency: t('currency', lang),
-    description: t('logo_banner_desc', lang)
-  },
+  // {
+  //   title: t('logo_banner_title', lang),
+  //   currency: t('currency', lang),
+  //   description: t('logo_banner_desc', lang)
+  // },
   {
     title: t('maintenance_title', lang),
-    price: t('maintenance_price', lang),
     billing: t('monthly', lang),
     currency: t('currency', lang),
     description: t('maintenance_desc', lang)
   },
   {
     title: t('domain_hosting_title', lang),
-    price: t('domain_hosting_price', lang),
     currency: t('currency', lang),
     description: t('domain_hosting_desc', lang)
   },
   {
     title: t('email_form_title', lang),
-    price: t('email_form_price', lang),
     currency: t('currency', lang),
     description: t('email_form_desc', lang)
   },
   {
     title: t('translation_setup_title', lang),
-    price: t('translation_setup_price', lang),
     currency: t('currency', lang),
     description: t('translation_setup_desc', lang)
   },
   {
     title: t('analytics_pixel_title', lang),
-    price: t('analytics_pixel_price', lang),
     currency: t('currency', lang),
     description: t('analytics_pixel_desc', lang)
   }
@@ -208,27 +196,14 @@ const addOns = [
           </div>
         </div>
       ))}
+      
     <div className="mt-8 border-t border-white/20 pt-6">
         <h2 className="mb-4 text-2xl font-bold">Add-Ons</h2>
         {addOns.map((addon) => (
             <div key={addon.title} className="mb-4 rounded-xl border border-white/15 bg-white/5 px-6 pt-2 shadow-sm backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:bg-white/10">
               <div className="flex items-end justify-between gap-4 border-b border-white/10 ">
                 <h3 className="text-lg font-semibold tracking-tight">{addon.title}</h3>
-                <div className="text-right">
-                  <div className="text-sm flex flex-col font-medium">
-                    {addon.priceRange ? (
-                      <span className="text-emerald-300">{addon.priceRange} {addon.currency}</span>
-                    ) : (
-                      <span className="text-emerald-300">{addon.price} {addon.currency}</span>
-                    )}
-                    {
-                      addon.billing && <span className="text-xs text-white/70">({addon.billing})</span>
-                    }
-                    {
-                      addon.unit && <span className="text-xs text-white/70">({addon.unit})</span>
-                    }
-                  </div>
-                </div>
+                
                 
                 
               </div>
@@ -238,6 +213,20 @@ const addOns = [
             </div>
         ))}
     </div>
+    <div className="border border-white/20 rounded-xl bg-white/5 py-2 text-center shadow-sm backdrop-blur-sm mt-1 hover:shadow-lg hover:bg-white/10 transition-all duration-300">
+        <h3 onClick={() => setActiveTab('contact')} className='cursor-pointer'>{t('contact_me_quote', lang)}</h3>
+      </div>
+      <div className="border border-white/20 rounded-xl bg-white/5 py-2 text-center shadow-sm backdrop-blur-sm mt-1 hover:shadow-lg hover:bg-white/10 transition-all duration-300">
+      
+       
+        <h3>{t('sent_whatsapp_message', lang)} <a
+        href="https://wa.me/+529991744413"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contact us on WhatsApp"
+        className="border-b border-dotted border-white/50 hover:border-white/100 transition"
+      >WhatsApp</a></h3>
+      </div>
     </>
   );
 }

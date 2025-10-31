@@ -119,7 +119,7 @@ function LandingPage() {
             ref={innerContentRef}
             className={`${contentDivClass}`}
           >
-            <Prices />
+            <Prices setActiveTab={handleTabChange} />
           </div>
         ) : activeTab === "about" ? (
           <div ref={innerContentRef} className={contentDivClass}>

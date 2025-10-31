@@ -12,12 +12,7 @@ function Projects() {
       link: "https://lisa-kabila.vercel.app/",
       imageSrc: '/lisa-kabila.png',
     },
-    {
-      title: t("project_yournook_title", lang),
-      description: t("project_yournook_desc", lang),
-      link: "https://www.yournook.app",
-      imageSrc: "/feedPage.png",
-    },
+   
     {
       title: t("project_portfolio_title", lang),
       description: t("project_portfolio_desc", lang),
@@ -29,6 +24,12 @@ function Projects() {
       description: t("project_fitness_desc", lang),
       link: "https://kflieder.github.io/Fitness-Trainer/",
       imageSrc: "/fitnessHome.png",
+    },
+     {
+      title: t("project_yournook_title", lang),
+      description: t("project_yournook_desc", lang),
+      link: "https://www.yournook.app",
+      imageSrc: "/feedPage.png",
     }
     
   ];
