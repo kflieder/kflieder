@@ -18,7 +18,7 @@ export const metadata = {
     url: "https://kacey.yournook.app",
     images: [
       {
-        url: "https://kacey.yournook.app/ProfilePic.png",
+        url: "https://kacey.yournook.app/profilePic.jpg",
         width: 1200,
         height: 630,
         alt: "Kacey Flieder Profile Picture",
