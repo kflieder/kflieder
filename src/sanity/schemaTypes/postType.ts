@@ -50,6 +50,20 @@ export const postType = defineType({
       name: 'body',
       type: 'blockContent',
     }),
+   defineField({
+    name: 'translations',
+    type: 'array',
+    of: [
+      defineArrayMember({
+        type: 'object',
+        fields: [
+          defineField({ name: 'language', type: 'string', title: 'Language' }),
+          defineField({ name: 'title', type: 'string', title: 'Translated Title' }),
+          defineField({ name: 'text', type: 'blockContent', title: 'Translated Text' }),
+        ]
+      })
+    ]
+   }),
   ],
   preview: {
     select: {
