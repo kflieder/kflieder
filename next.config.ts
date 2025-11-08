@@ -1,6 +1,7 @@
-import { type NextConfig } from "next";
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimentalturbopack: false,
   transpilePackages: ["@sanity/client", "sanity"],
   webpack(config) {
     config.module.rules.push({
