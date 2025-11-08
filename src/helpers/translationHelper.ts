@@ -30,6 +30,7 @@ export async function translatePostIfNeeded(post: any, targetLang: string) {
    
 
     const translation = {
+        _key: `${targetLang}-${Date.now()}`,
         language: targetLang,
         text: {
             title: (translatedTitle as deepl.TextResult).text,
