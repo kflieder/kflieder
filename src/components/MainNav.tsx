@@ -8,13 +8,13 @@ function MainNav() {
 
     
 
-    const navElStyle = "text-lg font-medium hover:underline";
-    const activeNavElStyle = "text-lg font-medium underline";
+    const navElStyle = "text-lg font-medium hover:border-b hover:border-white/70 transition-all duration-500";
+    const activeNavElStyle = "text-lg font-medium border-b-2 border-white";
 
   return (
     <div className="flex gap-4">
       <Link href='/' className={`${pathname === '/' ? activeNavElStyle : navElStyle}`}>Home</Link>
-      <Link href='/blog'  className={`${pathname === '/blog' ? activeNavElStyle : navElStyle}`}>Blog</Link>
+      <Link href='/blogs'  className={`${pathname === '/blogs' ? activeNavElStyle : navElStyle}`}>Blog</Link>
     </div>
   )
 }
