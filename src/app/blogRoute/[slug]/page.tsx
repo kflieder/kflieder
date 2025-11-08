@@ -4,6 +4,8 @@ import { client } from "@/sanity/lib/client";
 import Link from "next/link";
 import imageUrlBuilder from "@sanity/image-url";
 import { translatePostIfNeeded } from "@/helpers/translationHelper";
+import type { JSX } from "react";
+
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]`;
 const { projectId, dataset } = client.config();
@@ -14,18 +16,20 @@ const urlFor = (source: SanityImageSource) =>
 
 const options = { next: { revalidate: 30 } };
 
-export default async function PostPage({
+type PostPageProps = {
+  params: { slug: string };
+  searchParams?: { lang?: string };
+};
+
+async function PostPage({
   params,
   searchParams,
-}: {
-  params: { slug: string };
-  searchParams: { lang?: string };
-}) {
-  const { lang = "en" } = await searchParams;
+}: PostPageProps) {
+  const { lang = "en" } = searchParams ?? {};
 
   const post = await client.fetch<SanityDocument>(
     POST_QUERY,
-    await params,
+    params,
     options
   );
   const translatedPost = await translatePostIfNeeded(post, lang);
@@ -67,3 +71,5 @@ export default async function PostPage({
     </main>
   );
 }
+
+export default PostPage as unknown as (props: any) => Promise<JSX.Element>;
