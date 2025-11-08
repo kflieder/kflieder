@@ -18,7 +18,7 @@ export default async function PostPage({
   params,
   searchParams,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
   searchParams: { lang?: string };
 }) {
   const { lang = "en" } = await searchParams;
