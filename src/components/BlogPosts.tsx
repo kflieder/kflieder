@@ -7,7 +7,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import imageUrlBuilder from "@sanity/image-url";
 import { type SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { Kelly_Slab } from "next/font/google";
-import { set } from "sanity";
+import MatrixBanner from "./MatrixBanner";
 
 type Post = SanityDocument & {
   title: string;
@@ -106,56 +106,63 @@ function BlogPosts() {
   }, [lang]);
 
   return (
-    
-        <main className="flex flex-col items-center justify-center container mx-auto w-full sm:max-w-3xl sm:p-8 pt-8">
-          <h1 className={`sm:text-7xl text-3xl tracking-widest mb-8 ${myFont.className}`}>
-            Tech Made Clear
-          </h1>
-          <div className="bg-white/10 w-full h-[20vh] rounded-xl mb-8 flex justify-center items-center p-4 text-center">
-          <p>currently under construction, but feel free to check back and watch the evolution :D</p>
-          </div>
-          <ul className="flex flex-col gap-y-4 w-full">
-            {isLoading ? (
-              <p>Loading posts...</p>
-            ) : (
-               translatedPosts.map((post) => (
-              <li
-                ref={cardRef}
-                className="hover:underline border-4 rounded-2xl border-white/50 w-full sm:w-[25vw] h-84  relative"
-                key={post._id}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-                style={style}
-              >
-                <Link href={`/blogRoute/${post.slug.current}?lang=${lang}`}>
-                  {post.imageUrl && (
-                    <div className="h-full w-full rounded-xl overflow-hidden absolute top-0">
-                      <img
-                        src={post.imageUrl}
-                        alt={post.title}
-                        className="rounded-xl object-conver h-full w-full"
-                      />
-                    </div>
-                  )}
-                  <div
-                    className={`absolute bottom-5 left-2.5 right-2.5 bg-black p-2 rounded-b-xl ${myFont.className}`}
-                    style={{
-                      clipPath: "polygon(0 0, 100% 10%, 100% 100%, 0% 100%)",
-                    }}
-                  >
-                    <h2 className="text-base">{post.title}</h2>
-                    <p className="text-xs">
-                      {new Date(post.publishedAt).toLocaleDateString()}
-                    </p>
-                  </div>
-                </Link>
-              </li>
-            ))
-            )
-            }
-          </ul>
-        </main>
+    <main className="flex flex-col items-center justify-center container mx-auto w-full sm:max-w-3xl sm:p-8 pt-8">
+      <div className='flex flex-col justify-center items-center text-center'>
+      <h1
+        className={`sm:text-7xl text-3xl tracking-widest mb-8 ${myFont.className}`}
+      >
+        Code & Cosmos
+      </h1>
       
+      </div>
+      <div className="relative bg-white/10 w-full h-[20vh] rounded-xl mb-8 flex justify-center items-center p-4 text-center">
+      <img src='/stars.jpg' alt='galaxy' className='absolute w-full h-[20vh] object-cover rounded-xl opacity-30'/>
+        <MatrixBanner />
+        <h3 className={`sm:text-2xl text-3xl tracking-widest absolute ${myFont.className}`} >Inisghts for Tech, Mind, and Business</h3>
+      </div>
+      <ul className="flex flex-col gap-y-4 w-full">
+        {isLoading ? (
+          <div className="flex justify-center items-center w-full p-10">
+            <div className="loader w-full"></div>
+          </div>
+        ) : (
+          translatedPosts.map((post) => (
+            <li
+              ref={cardRef}
+              className="hover:underline border-4 rounded-2xl border-white/50 w-full sm:w-54 h-74  relative"
+              key={post._id}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              style={style}
+            >
+              <Link href={`/blogRoute/${post.slug.current}?lang=${lang}`}>
+                {post.imageUrl && (
+                  <div className="h-full w-full rounded-xl overflow-hidden absolute top-0">
+                    <img
+                      src={post.imageUrl}
+                      alt={post.title}
+                      className="rounded-xl object-conver h-full w-full"
+                    />
+                  </div>
+                )}
+
+                <div
+                  className={`absolute bottom-2.5 right-2.5 left-2.5 bg-black p-2 rounded-b-xl ${myFont.className}`}
+                  style={{
+                    clipPath: "polygon(0 0, 100% 10%, 100% 100%, 0% 100%)",
+                  }}
+                >
+                  <h2 className="text-base">{post.title}</h2>
+                  <p className="text-xs">
+                    {new Date(post.publishedAt).toLocaleDateString()}
+                  </p>
+                </div>
+              </Link>
+            </li>
+          ))
+        )}
+      </ul>
+    </main>
   );
 }
 
