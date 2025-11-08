@@ -107,19 +107,21 @@ function BlogPosts() {
 
   return (
     
-        <main className="flex flex-col items-center justify-center container mx-auto max-w-3xl p-8">
-          <h1 className={`text-7xl tracking-widest mb-8 ${myFont.className}`}>
+        <main className="flex flex-col items-center justify-center container mx-auto w-full sm:max-w-3xl sm:p-8 pt-8">
+          <h1 className={`sm:text-7xl text-3xl tracking-widest mb-8 ${myFont.className}`}>
             Tech Made Clear
           </h1>
-          <div className="bg-white/10 w-full h-[20vh] rounded-xl mb-8"></div>
-          <ul className="flex flex-col gap-y-4">
+          <div className="bg-white/10 w-full h-[20vh] rounded-xl mb-8 flex justify-center items-center p-4 text-center">
+          <p>currently under construction, but feel free to check back and watch the evolution :D</p>
+          </div>
+          <ul className="flex flex-col gap-y-4 w-full">
             {isLoading ? (
               <p>Loading posts...</p>
             ) : (
                translatedPosts.map((post) => (
               <li
                 ref={cardRef}
-                className="hover:underline border-4 rounded-2xl border-white/50  w-[25vw] h-84  relative"
+                className="hover:underline border-4 rounded-2xl border-white/50 w-full sm:w-[25vw] h-84  relative"
                 key={post._id}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
