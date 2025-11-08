@@ -11,6 +11,7 @@ import Contact from "./Contact";
 import { FaArrowCircleDown } from "react-icons/fa";
 import WhatsApp from "./WhatsApp";
 import { useLanguage } from "@/context/LanguageContext";
+import MainNav from "./MainNav";
 
 const myFont = Barlow({
   subsets: ["latin"],
@@ -55,14 +56,16 @@ function LandingPage() {
 
   return (
     <div className="relative bg-blue-950 w-full h-screen grid grid-cols-1 sm:grid-cols-2 text-white overflow-auto scrollbar-hide">
-      <div className="relative flex flex-col justify-start gap-4 lg:justify-around p-10 border-r border-white/40 sm:my-10">
-        <div className="flex sm:flex-col justify-between items-center sm:items-start w-full">
+      <div className="relative flex flex-col justify-start gap-8 lg:justify-around p-10 border-r border-white/40 sm:mb-10">
+        <MainNav />
+        <div className="flex sm:flex-col justify-between items-center sm:items-start w-full gap-y-2">
+          
           <h1 className="text-5xl font-bold w-auto shrink-0">
-            Kacey <br /> Flieder
+            Kacey <br className="block sm:hidden" /> Flieder
           </h1>
           <FaArrowCircleDown
             onClick={handleScroll}
-            className="text-2xl animate-bounce sm:hidden flex mr-"
+            className="text-2xl animate-bounce sm:hidden flex"
             size={54}
           />
           <h2 className="text-2xl opacity-90 sm:block hidden">

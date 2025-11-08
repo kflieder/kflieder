@@ -191,5 +191,8 @@
   "contact_me_quote": "Contact me for a quote",
   "contact_me_quote_es": "Contáctame para una cotización",
   "sent_whatsapp_message": "Send me a message on",
-  "sent_whatsapp_message_es": "Mandame un mensaje en"
+  "sent_whatsapp_message_es": "Mandame un mensaje en",
+
+  "home": "Home",
+  "home_es": "Inicio"
 }
