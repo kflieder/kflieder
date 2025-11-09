@@ -85,3 +85,42 @@ body {
 @keyframes l2 {
    100% {transform:rotate(calc(var(--s,1)*1turn))}
 }
+
+/* 🌌 Star drift effect */
+@keyframes drift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 1000px;
+  }
+}
+
+/* subtle sparkle overlay for that "alive" space feel */
+.star-bg {
+  background-image: url('/stars.jpg');
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: drift 720s linear infinite;
+  opacity: 0.5;
+}
+
+/* 💫 Neon glow for titles and taglines */
+.glow-text {
+  color: #fff;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #009977;
+}
+
+/* optional soft pulse for the Matrix characters */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.matrix-char {
+  animation: pulse 5s ease-in-out infinite;
+}

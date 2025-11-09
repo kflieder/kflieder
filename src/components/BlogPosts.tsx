@@ -107,18 +107,35 @@ function BlogPosts() {
 
   return (
     <main className="flex flex-col items-center justify-center container mx-auto w-full sm:max-w-3xl sm:p-8 pt-8">
-      <div className='flex flex-col justify-center items-center text-center'>
-      <h1
-        className={`sm:text-7xl text-3xl tracking-widest mb-8 ${myFont.className}`}
-      >
-        Code & Cosmos
-      </h1>
-      
+      <div className="flex flex-col justify-center items-center text-center">
+        <h1
+          className={`sm:text-7xl text-3xl tracking-widest mb-8 ${myFont.className} drop-shadow-[0_0_5px_#a16eff]`}
+        >
+          Code & Cosmos
+        </h1>
       </div>
-      <div className="relative bg-white/10 w-full h-[20vh] rounded-xl mb-8 flex justify-center items-center p-4 text-center">
-      <img src='/stars.jpg' alt='galaxy' className='absolute w-full h-[20vh] object-cover rounded-xl opacity-30'/>
-        <MatrixBanner />
-        <h3 className={`sm:text-2xl text-3xl tracking-widest absolute ${myFont.className}`} >Inisghts for Tech, Mind, and Business</h3>
+      <div className="relative w-full h-[20vh] rounded-xl mb-8 flex justify-center items-center text-center"
+      
+      >
+        {/* <img
+          src="/stars.jpg"
+          alt="galaxy"
+          className="absolute w-full h-[20vh] object-cover rounded-xl opacity-50"
+          
+        /> */}
+        <div className="absolute inset-0 star-bg rounded-xl"></div>
+
+        <div className="h-[20vh] overflow-hidden rounded-xl">
+          <div className=" w-full rounded-xl bg-black/60 overflow-hidden"
+          >
+            <MatrixBanner />
+          </div>
+        </div>
+        <h3
+          className={`sm:text-2xl text-3xl tracking-widest absolute ${myFont.className}`}
+        >
+          Inisghts for Tech, Mind, and Business
+        </h3>
       </div>
       <ul className="flex flex-col gap-y-4 w-full">
         {isLoading ? (

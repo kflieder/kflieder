@@ -1,5 +1,4 @@
 "use client";
-import { request } from "http";
 import React, { useRef, useEffect } from "react";
 
 function MatrixBanner() {
@@ -10,10 +9,13 @@ function MatrixBanner() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const fontSize = 10;
+    const fontSize = 24;
     const columns = canvas.width / fontSize;
 
     for (let i = 0; i < columns; i++) {
@@ -27,7 +29,7 @@ function MatrixBanner() {
       return matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
     }
 
-    ctx.fillStyle = "rgba(0,0,0,0.8)";
+    ctx.fillStyle = "rgba(0,0,0,0.1)";
     ctx.font = `${fontSize}px monospace`;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -74,7 +76,7 @@ function MatrixBanner() {
     requestAnimationFrame(animate);
   }, []);
 
-  return <canvas ref={canvasRef} className="w-full h-full"></canvas>;
+  return <canvas ref={canvasRef} className="w-full h-full rounded-xl overflow-hidden"></canvas>;
 }
 
 export default MatrixBanner;
