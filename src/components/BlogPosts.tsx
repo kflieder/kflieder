@@ -113,6 +113,7 @@ function BlogPosts() {
         >
           Code & Cosmos
         </h1>
+        <h3>This page is currently under construction, feel free to check back periodically to see it's evolution :) </h3>
       </div>
       <div className="relative w-full h-[20vh] rounded-xl mb-8 flex justify-center items-center text-center"
       
