@@ -2,6 +2,7 @@
 import React from 'react'
 import { useSearchParams } from 'next/navigation'
 
+export const dynamic = "force-dynamic";
 
 function OauthSuccesPage() {
    const searchParams = useSearchParams();

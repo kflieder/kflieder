@@ -1,9 +1,10 @@
 
 'use client'
+export const dynamic = "force-dynamic";
 import OauthSuccesPage from '@/components/OauthSuccesPage'
 import React from 'react'
 
-export const dynamic = "force-dynamic";
+
 
 function page() {
   return (
