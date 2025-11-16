@@ -2,7 +2,7 @@
 import React from 'react'
 import { useSearchParams } from 'next/navigation'
 
-function pages() {
+function page() {
     const searchParams = useSearchParams();
     const connectedAccountId = searchParams.get("connectedAccountId")
   return (
@@ -13,4 +13,4 @@ function pages() {
   )
 }
 
-export default pages
+export default page
