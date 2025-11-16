@@ -24,7 +24,7 @@ export async function GET(req: Request) {
     // TODO: Save connectedAccountId to your DB linked to the user/client
     console.log("Connected account ID:", connectedAccountId);
     console.log(resp.stripe_user_id)
-    return NextResponse.redirect(`${process.env.NEXT_PUBLIC_APP_URL}/success?connectedAccountId=${connectedAccountId}`);
+    return NextResponse.redirect(`${process.env.NEXT_PUBLIC_APP_URL}/success/oauth?connectedAccountId=${connectedAccountId}`);
   } catch (error) {
     console.error("OAuth callback error:", error);
     return NextResponse.json({ error: "Failed to complete OAuth" }, { status: 500 });
