@@ -1,4 +1,5 @@
 
+'use client'
 import OauthSuccesPage from '@/components/OauthSuccesPage'
 import React from 'react'
 
