@@ -1,14 +1,11 @@
-'use client'
+
+import OauthSuccesPage from '@/components/OauthSuccesPage'
 import React from 'react'
-import { useSearchParams } from 'next/navigation'
 
 function page() {
-    const searchParams = useSearchParams();
-    const connectedAccountId = searchParams.get("connectedAccountId")
   return (
     <div>
-      <p>SUCCESSS</p>
-      <p>Save this number please: {connectedAccountId}</p>
+      <OauthSuccesPage />
     </div>
   )
 }
