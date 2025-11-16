@@ -2,15 +2,15 @@
 'use client'
 export const dynamic = "force-dynamic";
 import OauthSuccesPage from '@/components/OauthSuccesPage'
-import React from 'react'
+import React, { Suspense } from 'react'
 
 
 
 function page() {
   return (
-    <div>
+     <Suspense fallback={<div>Loading...</div>}>
       <OauthSuccesPage />
-    </div>
+    </Suspense>
   )
 }
 
