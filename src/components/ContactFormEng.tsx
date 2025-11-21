@@ -86,7 +86,7 @@ function ContactFormEng() {
       )}
       <button
         type="submit"
-        className="w-full py-2 px-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"
+        className="w-full py-2 px-4 border hover:bg-white/20 transition-all duration-300 text-white font-semibold rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300 cursor-pointer"
       >
         Send Message
       </button>
