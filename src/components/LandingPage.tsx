@@ -50,7 +50,7 @@ function LandingPage() {
     }
   }
 
-  const contentDivClass = `flex-grow lg:p-10 p-5 sm:h-[70vh] h-[80vh] overflow-auto scrollbar-hide ${
+  const contentDivClass = `flex-grow p-5 sm:h-[70vh] h-[80vh] overflow-auto scrollbar-hide ${
     animateOut ? "fade-scale-out" : "fade-scale-in"
   }`;
 
@@ -88,14 +88,14 @@ function LandingPage() {
         {lang === "es" ? "English" : "Español"}
       </button>
 
-      <div className="sm:pt-10 flex flex-col w-full">
-        <div className="flex lg:flex-row flex-col w-full lg:justify-between lg:pb-5 border-b border-white/40 items-center">
+      <div className="sm:pt-5 flex flex-col w-full">
+        <div className="flex flex-col w-full lg:justify-between lg:pb-5 border-b border-white/40 items-center">
           <h1
-            className={`lg:order-1 order-2 text-5xl lg:pl-5 py-6 lg:py-10 uppercase tracking-widest font-thin text-center w-full ${
+            className={`text-5xl py-6 lg:py-10 uppercase tracking-widest font-thin text-center w-full ${
               animateOut ? "fade-scale-out" : "fade-scale-in"
             } ${
               activeTab !== "contact" && activeTab !== "about"
-                ? "lg:pl-10 text-6xl"
+                ? "text-6xl"
                 : ""
             } ${myFont.className}`}
           >
@@ -107,7 +107,7 @@ function LandingPage() {
               ? t("about", lang)
               : t("contact", lang)}
           </h1>
-          <div ref={contentRef} className="lg:order-2 order-1 sm:pt-0 pt-10">
+          <div ref={contentRef} className="w-full">
             <NavBar setActiveTab={handleTabChange} />
           </div>
         </div>

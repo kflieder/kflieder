@@ -8,11 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "@radix-ui/react-select": "^2.2.6",
     "@sanity/client": "^7.12.1",
     "@sanity/icons": "^3.7.4",
     "@sanity/image-url": "^1.2.0",
     "@sanity/vision": "^4.13.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "deepl-node": "^1.21.0",
+    "lucide-react": "^0.554.0",
     "next": "15.5.6",
     "next-sanity": "^11.6.5",
     "react": "19.1.0",
@@ -20,7 +24,9 @@
     "react-icons": "^5.5.0",
     "sanity": "^4.14.2",
     "stripe": "^19.3.1",
-    "styled-components": "^6.1.19"
+    "styled-components": "^6.1.19",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
