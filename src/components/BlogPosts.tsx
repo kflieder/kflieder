@@ -122,7 +122,7 @@ function BlogPosts() {
       </div>
       <ul className="grid sm:grid-cols-4 grid-cols-1 gap-4 w-full">
         {isLoading ? (
-          <div className="flex justify-center items-center w-full p-10">
+          <div className="flex col-span-4 justify-center items-center w-full p-10">
             <div className="loader w-full"></div>
           </div>
         ) : (
@@ -140,7 +140,7 @@ function BlogPosts() {
                 )}
 
                 <div
-                  className={`absolute bottom-2.5 right-2.5 left-2.5 bg-black p-2 rounded-b-xl ${myFont.className}`}
+                  className={`absolute bottom-0 right-0 left-0 bg-black p-2 pt-5 flex flex-col justify-between rounded-b-xl h-34 ${myFont.className}`}
                   style={{
                     clipPath: "polygon(0 0, 100% 10%, 100% 100%, 0% 100%)",
                   }}

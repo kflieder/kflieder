@@ -5,9 +5,17 @@ import Link from "next/link";
 import imageUrlBuilder from "@sanity/image-url";
 import { translatePostIfNeeded } from "@/helpers/translationHelper";
 import type { JSX } from "react";
+import ShareButton from "@/components/ShareButton";
 
-
-const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]`;
+const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{ 
+  _id,
+  title,
+  slug,
+  publishedAt,
+  mainImage,
+  body,
+  author->{name}
+}`;
 const { projectId, dataset } = client.config();
 const builder =
   projectId && dataset ? imageUrlBuilder({ projectId, dataset }) : null;
@@ -21,17 +29,10 @@ type PostPageProps = {
   searchParams?: { lang?: string };
 };
 
-async function PostPage({
-  params,
-  searchParams,
-}: PostPageProps) {
+async function PostPage({ params, searchParams }: PostPageProps) {
   const { lang = "en" } = searchParams ?? {};
 
-  const post = await client.fetch<SanityDocument>(
-    POST_QUERY,
-    params,
-    options
-  );
+  const post = await client.fetch<SanityDocument>(POST_QUERY, params, options);
   const translatedPost = await translatePostIfNeeded(post, lang);
 
   console.log("🪶 LANG:", lang);
@@ -44,12 +45,32 @@ async function PostPage({
   const postImageUrl = post.mainImage
     ? urlFor(post.mainImage)?.width(550).height(310).url()
     : null;
+  const components = {
+  block: {
+    normal: ({ children }: any) => (
+      <p className="mb-6 leading-relaxed whitespace-pre-line">{children}</p>
+    ),
+    h3: ({ children }: any) => (
+      <h3 className="text-2xl font-bold mt-6 mb-4">{children}</h3>
+    ),
+    h2: ({ children }: any) => (
+      <h2 className="text-3xl font-bold mt-8 mb-6">{children}</h2>
+    ),
+  },
+};
+
+
+
 
   return (
-    <main className="container mx-auto min-h-screen max-w-3xl p-8 flex flex-col gap-4">
+    <main className="container mx-auto min-h-screen max-w-3xl p-8 flex flex-col gap-4 border mt-10">
+      <div className='w-full flex justify-between'>
       <Link href="/blogs" className="hover:underline">
         ← Back to posts
       </Link>
+      <ShareButton title={post.title} />
+      </div>
+      <div className='w-full flex justify-center'>
       {postImageUrl && (
         <img
           src={postImageUrl}
@@ -59,14 +80,17 @@ async function PostPage({
           height="310"
         />
       )}
-      <h1 className="text-4xl font-bold mb-8">{translatedPost.title || post.title}</h1>
-      <div className="prose">
-        <p>Published: {new Date(post.publishedAt).toLocaleDateString()}</p>
-        {typeof translatedPost.body === "string" ? (
-          <div>{translatedPost.body}</div>
-        ) : (
-          <PortableText value={translatedPost.body} />
-        )}
+      </div>
+      <h1 className="text-4xl font-bold mb-8">
+        {translatedPost.title || post.title}
+      </h1>
+      <div className="prose prose-invert max-w-none">
+        <PortableText
+          value={
+            Array.isArray(translatedPost.body) ? translatedPost.body : post.body
+          }
+          components={components}
+        />
       </div>
     </main>
   );
