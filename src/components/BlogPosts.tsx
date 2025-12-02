@@ -120,14 +120,14 @@ function BlogPosts() {
           Inisghts for Tech, Mind, and Business
         </h3>
       </div>
-      <ul className="grid sm:grid-cols-4 grid-cols-1 gap-4 w-full">
+      <ul className="grid sm:grid-cols-4 grid-cols-1 gap-4 w-full place-items-center">
         {isLoading ? (
           <div className="flex col-span-4 justify-center items-center w-full p-10">
             <div className="loader w-full"></div>
           </div>
         ) : (
           translatedPosts.map((post) => (
-            <TiltCard key ={post._id}>
+            <TiltCard key={post._id}>
               <Link href={`/blogRoute/${post.slug.current}?lang=${lang}`}>
                 {post.imageUrl && (
                   <div className="overflow-hidden absolute top-0">
