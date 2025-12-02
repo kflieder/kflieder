@@ -9,6 +9,12 @@ export const postType = defineType({
   fields: [
     defineField({
       name: 'title',
+      title: 'title (English)',
+      type: 'string',
+    }),
+    defineField({
+      name: 'title_es',
+      title: 'title (Spanish)',
       type: 'string',
     }),
     defineField({
@@ -50,20 +56,10 @@ export const postType = defineType({
       name: 'body',
       type: 'blockContent',
     }),
-   defineField({
-    name: 'translations',
-    type: 'array',
-    of: [
-      defineArrayMember({
-        type: 'object',
-        fields: [
-          defineField({ name: 'language', type: 'string', title: 'Language' }),
-          defineField({ name: 'title', type: 'string', title: 'Translated Title' }),
-          defineField({ name: 'text', type: 'blockContent', title: 'Translated Text' }),
-        ]
-      })
-    ]
-   }),
+    defineField({
+      name: 'body_es',
+      type: 'blockContent',
+    }),
   ],
   preview: {
     select: {

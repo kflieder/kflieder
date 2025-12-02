@@ -3,17 +3,18 @@ import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { client } from "@/sanity/lib/client";
 import Link from "next/link";
 import imageUrlBuilder from "@sanity/image-url";
-import { translatePostIfNeeded } from "@/helpers/translationHelper";
 import type { JSX } from "react";
 import ShareButton from "@/components/ShareButton";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{ 
   _id,
   title,
+  title_es,
   slug,
   publishedAt,
   mainImage,
   body,
+  body_es,
   author->{name}
 }`;
 const { projectId, dataset } = client.config();
@@ -33,31 +34,29 @@ async function PostPage({ params, searchParams }: PostPageProps) {
   const { lang = "en" } = searchParams ?? {};
 
   const post = await client.fetch<SanityDocument>(POST_QUERY, params, options);
-  const translatedPost = await translatePostIfNeeded(post, lang);
 
-  console.log("🪶 LANG:", lang);
-  console.log(
-    "📦 ORIGINAL POST BODY TYPE:",
-    typeof post.body,
-    Array.isArray(post.body)
-  );
-  console.log("📜 TRANSLATED POST:", JSON.stringify(translatedPost, null, 2));
+ 
   const postImageUrl = post.mainImage
     ? urlFor(post.mainImage)?.width(550).height(310).url()
     : null;
+    
   const components = {
-  block: {
-    normal: ({ children }: any) => (
-      <p className="mb-6 leading-relaxed whitespace-pre-line">{children}</p>
-    ),
-    h3: ({ children }: any) => (
-      <h3 className="text-2xl font-bold mt-6 mb-4">{children}</h3>
-    ),
-    h2: ({ children }: any) => (
-      <h2 className="text-3xl font-bold mt-8 mb-6">{children}</h2>
+  marks: {
+    strong: (props: any) => <strong>{props.children}</strong>,
+    em: (props: any) => <em>{props.children}</em>,
+    link: (props: any) => (
+      <a href={props.value.href} target="_blank" rel="noopener noreferrer" className="underline text-blue-500">
+        {props.children}
+      </a>
     ),
   },
+  block: {
+    normal: ({ children }: any) => <p className="mb-6 leading-relaxed whitespace-pre-line">{children}</p>,
+    h2: ({ children }: any) => <h2 className="text-3xl font-bold mt-8 mb-6">{children}</h2>,
+    h3: ({ children }: any) => <h3 className="text-2xl font-bold mt-6 mb-4">{children}</h3>,
+  },
 };
+
 
 
 
@@ -82,13 +81,11 @@ async function PostPage({ params, searchParams }: PostPageProps) {
       )}
       </div>
       <h1 className="text-4xl font-bold mb-8">
-        {translatedPost.title || post.title}
+        {lang === 'en' ? post.title : post.title_es}
       </h1>
       <div className="prose prose-invert max-w-none">
         <PortableText
-          value={
-            Array.isArray(translatedPost.body) ? translatedPost.body : post.body
-          }
+          value={lang === 'en' ? post.body : post.body_es}
           components={components}
         />
       </div>

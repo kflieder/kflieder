@@ -27,65 +27,83 @@ const myFont = Kelly_Slab({
 const POSTS_QUERY = `*[
   _type == "post"
   && defined(slug.current)
-]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt, mainImage, author->{name}}`;
+]|order(publishedAt desc)[0...12]{_id, title, title_es, slug, publishedAt, mainImage, author->{name}}`;
 const options = { next: { revalidate: 30 } };
 
 function BlogPosts() {
   const { lang } = useLanguage();
-  const [translatedPosts, setTranslatedPosts] = useState<Post[]>([]);
   const { projectId, dataset } = client.config();
   const builder =
     projectId && dataset ? imageUrlBuilder({ projectId, dataset }) : null;
   const urlFor = (source: SanityImageSource) =>
     builder ? builder.image(source) : null;
+  const [posts, setPosts] = useState<Post[]>([])
   const [isLoading, setIsLoading] = useState(false);
 
+    useEffect(() => {
+      async function fetchPosts() {
+        setIsLoading(true);
+        try {
+          const data = await client.fetch<Post[]>(POSTS_QUERY, {}, options)
+          const postsWithImages = data.map((post) => ({
+        ...post,
+        imageUrl: post.mainImage ? urlFor(post.mainImage)?.fit("clip").auto("format").url() : null,
+      }));
+          setPosts(postsWithImages)
+        } catch (error) {
+          console.error('error fetching posts', error)
+        } finally {
+          setIsLoading(false)
+        }
+      }
+      fetchPosts();
+    }, [])
  
 
-  useEffect(() => {
-    async function fetchTranslations() {
-      setIsLoading(true);
-      try {
-        const posts = await client.fetch<Post[]>(POSTS_QUERY, {}, options);
+  // useEffect(() => {
+  //   async function fetchTranslations() {
+  //     setIsLoading(true);
+  //     try {
+  //       const posts = await client.fetch<Post[]>(POSTS_QUERY, {}, options);
 
-        const translatedPosts = await Promise.all(
-          posts.map(async (post) => {
-            const res = await fetch("/api/posts", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                slug: post.slug.current,
-                targetLang: lang,
-              }),
-            });
+  //       const translatedPosts = await Promise.all(
+  //         posts.map(async (post) => {
+  //           const res = await fetch("/api/posts", {
+  //             method: "POST",
+  //             headers: { "Content-Type": "application/json" },
+  //             body: JSON.stringify({
+  //               slug: post.slug.current,
+  //               targetLang: lang,
+  //             }),
+  //           });
 
-            const postImageUrl = post.mainImage
-              ? urlFor(post.mainImage)?.fit("clip").auto("format").url()
-              : null;
-            if (!res.ok) {
-              console.error(
-                `Failed to fetch translation for post: ${post.slug.current}`
-              );
-              return post; // Return original post if translation fails
-            }
-            const data = await res.json();
-            return {
-              ...post,
-              title: data.translated?.title || post.title,
-              imageUrl: postImageUrl,
-            };
-          })
-        );
-        console.log(posts);
-        setTranslatedPosts(translatedPosts);
-      } catch (error) {
-        console.error("Error fetching translated posts:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-    fetchTranslations();
-  }, [lang]);
+  //           const postImageUrl = post.mainImage
+  //             ? urlFor(post.mainImage)?.fit("clip").auto("format").url()
+  //             : null;
+  //           if (!res.ok) {
+  //             console.error(
+  //               `Failed to fetch translation for post: ${post.slug.current}`
+  //             );
+  //             return post; // Return original post if translation fails
+  //           }
+  //           const data = await res.json();
+  //           return {
+  //             ...post,
+  //             title: data.translated?.title || post.title,
+  //             imageUrl: postImageUrl,
+  //           };
+  //         })
+  //       );
+  //       console.log(posts);
+  //       setTranslatedPosts(translatedPosts);
+  //     } catch (error) {
+  //       console.error("Error fetching translated posts:", error);
+  //     } finally {
+  //       setIsLoading(false);
+  //     }
+  //   }
+  //   fetchTranslations();
+  // }, [lang]);
 
   return (
     <main className="flex flex-col items-center justify-center container mx-auto w-full sm:max-w-6xl sm:p-8 pt-8">
@@ -120,13 +138,13 @@ function BlogPosts() {
           Inisghts for Tech, Mind, and Business
         </h3>
       </div>
-      <ul className="grid sm:grid-cols-4 grid-cols-1 gap-4 w-full place-items-center">
+      <ul className="grid sm:grid-cols-4 grid-cols-1 gap-4 w-full place-it">
         {isLoading ? (
           <div className="flex col-span-4 justify-center items-center w-full p-10">
             <div className="loader w-full"></div>
           </div>
         ) : (
-          translatedPosts.map((post) => (
+         posts.map((post) => (
             <TiltCard key={post._id}>
               <Link href={`/blogRoute/${post.slug.current}?lang=${lang}`}>
                 {post.imageUrl && (
@@ -145,7 +163,7 @@ function BlogPosts() {
                     clipPath: "polygon(0 0, 100% 10%, 100% 100%, 0% 100%)",
                   }}
                 >
-                  <h2 className="text-base">{post.title}</h2>
+                  <h2 className="text-base">{lang === 'en' ? post.title : post.title_es}</h2>
                   <div className="text-xs flex justify-between w-full">
                     <p>{new Date(post.publishedAt).toLocaleDateString()}</p>
                     <p>{post.author.name}</p>
