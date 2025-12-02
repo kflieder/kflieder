@@ -34,7 +34,7 @@ export default function HiddenBacklink() {
           para crear sitios y aplicaciones interactivas. Si estás considerando
           comenzar tu carrera como desarrollador o mejorar tus habilidades en
           este lenguaje, un{" "}
-          <Link href="https://www.grupocodesi.com/cursos/curso-de-javascript.html">
+          <Link rel="nofollow" href="https://www.grupocodesi.com/cursos/curso-de-javascript.html">
             curso de JavaScript
           </Link>{" "}
           puede ser una excelente opción. Sin embargo, como todo lenguaje, tiene
@@ -179,7 +179,7 @@ export default function HiddenBacklink() {
           <a
             href="https://www.grupocodesi.com"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
             className="text-blue-600 hover:underline"
           >
             Grupo Codesi
