@@ -8,11 +8,15 @@ import imageUrlBuilder from "@sanity/image-url";
 import { type SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { Kelly_Slab } from "next/font/google";
 import MatrixBanner from "./MatrixBanner";
+import TiltCard from "./TiltCard";
 
 type Post = SanityDocument & {
   title: string;
   slug: { current: string };
   publishedAt: string;
+  author: {
+    name: string;
+  };
 };
 
 const myFont = Kelly_Slab({
@@ -23,7 +27,7 @@ const myFont = Kelly_Slab({
 const POSTS_QUERY = `*[
   _type == "post"
   && defined(slug.current)
-]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt, mainImage}`;
+]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt, mainImage, author->{name}}`;
 const options = { next: { revalidate: 30 } };
 
 function BlogPosts() {
@@ -34,32 +38,9 @@ function BlogPosts() {
     projectId && dataset ? imageUrlBuilder({ projectId, dataset }) : null;
   const urlFor = (source: SanityImageSource) =>
     builder ? builder.image(source) : null;
-  const cardRef = useRef<HTMLLIElement | null>(null);
-  const [style, setStyle] = useState({ transform: "" });
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    const card = cardRef.current;
-    if (!card) return;
-
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left; // x position within the element.
-    const y = e.clientY - rect.top; // y position within the element.
-
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = ((y - centerY) / centerY) * 10; // Max rotation of 10 degrees
-    const rotateY = ((x - centerX) / centerX) * -10; // Max rotation of 10 degrees
-
-    setStyle({
-      transform: `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setStyle({ transform: "perspective(600px) rotateX(0deg) rotateY(0deg)" });
-  };
+ 
 
   useEffect(() => {
     async function fetchTranslations() {
@@ -95,6 +76,7 @@ function BlogPosts() {
             };
           })
         );
+        console.log(posts);
         setTranslatedPosts(translatedPosts);
       } catch (error) {
         console.error("Error fetching translated posts:", error);
@@ -113,11 +95,12 @@ function BlogPosts() {
         >
           Code & Cosmos
         </h1>
-        <h3>This page is currently under construction, feel free to check back periodically to see it's evolution :) </h3>
+        <h3>
+          This page is currently under construction, feel free to check back
+          periodically to see it's evolution :){" "}
+        </h3>
       </div>
-      <div className="relative w-full h-[20vh] rounded-xl mb-8 flex justify-center items-center text-center"
-      
-      >
+      <div className="relative w-full h-[20vh] rounded-xl mb-8 flex justify-center items-center text-center">
         {/* <img
           src="/stars.jpg"
           alt="galaxy"
@@ -127,8 +110,7 @@ function BlogPosts() {
         <div className="absolute inset-0 star-bg rounded-xl"></div>
 
         <div className="h-[20vh] overflow-hidden rounded-xl">
-          <div className=" w-full rounded-xl bg-black/60 overflow-hidden"
-          >
+          <div className=" w-full rounded-xl bg-black/60 overflow-hidden">
             <MatrixBanner />
           </div>
         </div>
@@ -138,28 +120,21 @@ function BlogPosts() {
           Inisghts for Tech, Mind, and Business
         </h3>
       </div>
-      <ul className="flex flex-col gap-y-4 w-full">
+      <ul className="flex gap-x-4 w-full">
         {isLoading ? (
           <div className="flex justify-center items-center w-full p-10">
             <div className="loader w-full"></div>
           </div>
         ) : (
           translatedPosts.map((post) => (
-            <li
-              ref={cardRef}
-              className="hover:underline border-4 rounded-2xl border-white/50 w-full sm:w-54 h-74  relative"
-              key={post._id}
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
-              style={style}
-            >
+            <TiltCard key ={post._id}>
               <Link href={`/blogRoute/${post.slug.current}?lang=${lang}`}>
                 {post.imageUrl && (
-                  <div className="h-full w-full rounded-xl overflow-hidden absolute top-0">
+                  <div className="overflow-hidden absolute top-0">
                     <img
                       src={post.imageUrl}
                       alt={post.title}
-                      className="rounded-xl object-conver h-full w-full"
+                      className="object-contain h-full w-full"
                     />
                   </div>
                 )}
@@ -171,12 +146,13 @@ function BlogPosts() {
                   }}
                 >
                   <h2 className="text-base">{post.title}</h2>
-                  <p className="text-xs">
-                    {new Date(post.publishedAt).toLocaleDateString()}
-                  </p>
+                  <div className="text-xs flex justify-between w-full">
+                    <p>{new Date(post.publishedAt).toLocaleDateString()}</p>
+                    <p>{post.author.name}</p>
+                  </div>
                 </div>
               </Link>
-            </li>
+            </TiltCard>
           ))
         )}
       </ul>
