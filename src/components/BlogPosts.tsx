@@ -88,7 +88,7 @@ function BlogPosts() {
   }, [lang]);
 
   return (
-    <main className="flex flex-col items-center justify-center container mx-auto w-full sm:max-w-3xl sm:p-8 pt-8">
+    <main className="flex flex-col items-center justify-center container mx-auto w-full sm:max-w-6xl sm:p-8 pt-8">
       <div className="flex flex-col justify-center items-center text-center">
         <h1
           className={`sm:text-7xl text-3xl tracking-widest mb-8 ${myFont.className} drop-shadow-[0_0_5px_#a16eff]`}
@@ -100,7 +100,7 @@ function BlogPosts() {
           periodically to see it's evolution :){" "}
         </h3>
       </div>
-      <div className="relative w-full h-[20vh] rounded-xl mb-8 flex justify-center items-center text-center">
+      <div className="sm:max-w-3xl relative w-full h-[20vh] rounded-xl mb-8 flex justify-center items-center text-center">
         {/* <img
           src="/stars.jpg"
           alt="galaxy"
@@ -120,7 +120,7 @@ function BlogPosts() {
           Inisghts for Tech, Mind, and Business
         </h3>
       </div>
-      <ul className="flex gap-x-4 w-full">
+      <ul className="grid sm:grid-cols-4 grid-cols-1 gap-4 w-full">
         {isLoading ? (
           <div className="flex justify-center items-center w-full p-10">
             <div className="loader w-full"></div>
