@@ -138,7 +138,7 @@ function BlogPosts() {
           Inisghts for Tech, Mind, and Business
         </h3>
       </div>
-      <ul className="grid sm:grid-cols-4 grid-cols-1 gap-4 w-full place-it">
+      <ul className="grid sm:grid-cols-4 grid-cols-1 gap-4 w-full place-items-center">
         {isLoading ? (
           <div className="flex col-span-4 justify-center items-center w-full p-10">
             <div className="loader w-full"></div>

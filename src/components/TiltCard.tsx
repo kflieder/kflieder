@@ -32,7 +32,7 @@ function TiltCard({ children }: { children: React.ReactNode }) {
   return (
     <li
       ref={cardRef}
-      className="hover:underline border-4 rounded-2xl border-white/50 w-54 h-64 relative overflow-hidden"
+      className="hover:underline border-4 rounded-2xl border-white/50 sm:w-54 sm:h-64 w-full h-76 relative overflow-hidden"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={style}
