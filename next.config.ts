@@ -1,9 +1,7 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  experimentalturbopack: false,
+const nextConfig = {
+  turbo: false,
   transpilePackages: ["@sanity/client", "sanity"],
-  webpack(config) {
+  webpack(config: any) {
     config.module.rules.push({
       test: /\.mjs$/,
       include: /node_modules/,
