@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext';
 
-function NavBar({setActiveTab}: {setActiveTab?: (tab: 'projects' | 'prices' | 'about' | 'contact') => void}) {
-    const [activeLocalTab, setLocalActiveTab] = useState<'projects' | 'prices' | 'about' | 'contact'>('projects');
+function NavBar({setActiveTab, activeTab}: {setActiveTab?: (tab: 'projects' | 'prices' | 'about' | 'contact') => void, activeTab: 'projects' | 'prices' | 'about' | 'contact'}) {
+    // const [activeLocalTab, setLocalActiveTab] = useState<'projects' | 'prices' | 'about' | 'contact'>('projects');
+    const activeLocalTab = activeTab
     const { lang, t } = useLanguage();
     function handleTabClick(tab: 'projects' | 'prices' | 'about' | 'contact') {
-        setLocalActiveTab(tab);
+        
         setActiveTab?.(tab);
     }
 

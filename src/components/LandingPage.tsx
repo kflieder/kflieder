@@ -108,7 +108,7 @@ function LandingPage() {
               : t("contact", lang)}
           </h1>
           <div ref={contentRef} className="w-full">
-            <NavBar setActiveTab={handleTabChange} />
+            <NavBar setActiveTab={handleTabChange} activeTab={activeTab} />
           </div>
         </div>
 
@@ -122,7 +122,7 @@ function LandingPage() {
             ref={innerContentRef}
             className={`${contentDivClass}`}
           >
-            <Prices setActiveTab={handleTabChange} />
+            <Prices setActiveTab={handleTabChange} activeTab={activeTab} />
           </div>
         ) : activeTab === "about" ? (
           <div ref={innerContentRef} className={contentDivClass}>

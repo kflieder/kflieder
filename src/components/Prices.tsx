@@ -3,9 +3,10 @@ import React, { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
 function Prices({
-  setActiveTab,
+  setActiveTab
 }: {
   setActiveTab: (tab: "projects" | "prices" | "about" | "contact") => void;
+   activeTab: "projects" | "prices" | "about" | "contact";
 }) {
   const { t, lang } = useLanguage();
 
