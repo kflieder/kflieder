@@ -1,6 +1,8 @@
 import React from 'react'
 import { useLanguage } from '@/context/LanguageContext';
 import ContactFormEng from './ContactFormEng';
+import ContactFormEsp from './ContactFormSpanish';
+import ContactFormSpanish from './ContactFormSpanish';
 
 function Contact() {
   const { t, lang } = useLanguage();
@@ -11,7 +13,7 @@ function Contact() {
         lang === 'en' ? (<>
           <ContactFormEng />
         </>) : (<>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdxjIPOzNKR6TBi84d4USURBb4lpMvPa_Bona3U0y2KyXhyLA/viewform?embedded=true" width="100%" height="3000"  >Loading…</iframe>
+       <ContactFormSpanish />
         </>)
       }
     
