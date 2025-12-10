@@ -9,7 +9,7 @@ function Projects() {
     {
       title: t("project_ecom_title", lang),
       description: t("project_ecom_desc", lang),
-      link: "https://lisa-kabila.vercel.app/",
+      link: "https://kabila.net/",
       imageSrc: '/lisa-kabila.png',
     },
    
