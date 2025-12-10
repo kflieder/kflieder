@@ -30,8 +30,10 @@ type PostPageProps = {
   searchParams?: { lang?: string };
 };
 
-async function PostPage({ params, searchParams }: PostPageProps) {
-  const { lang = "en" } = searchParams ?? {};
+async function PostPage(props: PostPageProps) {
+  const { lang = "en" } = await props.searchParams ?? {}
+  const { slug } = await props.params
+  const params = { slug }
 
   const post = await client.fetch<SanityDocument>(POST_QUERY, params, options);
 
