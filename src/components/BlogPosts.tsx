@@ -106,17 +106,13 @@ function BlogPosts() {
   // }, [lang]);
 
   return (
-    <main className="flex flex-col items-center justify-center container mx-auto w-full sm:max-w-6xl sm:p-8 pt-8">
+    <main className="flex flex-col items-center justify-center container mx-auto w-full sm:max-w-6xl sm:p-8">
       <div className="flex flex-col justify-center items-center text-center">
         <h1
           className={`sm:text-7xl text-3xl tracking-widest mb-8 ${myFont.className} drop-shadow-[0_0_5px_#a16eff]`}
         >
           Code & Cosmos
         </h1>
-        <h3>
-          This page is currently under construction, feel free to check back
-          periodically to see it's evolution :){" "}
-        </h3>
       </div>
       <div className="sm:max-w-3xl relative w-full h-[20vh] rounded-xl mb-8 flex justify-center items-center text-center">
         {/* <img
@@ -128,7 +124,7 @@ function BlogPosts() {
         <div className="absolute inset-0 star-bg rounded-xl"></div>
 
         <div className="h-[20vh] overflow-hidden rounded-xl">
-          <div className=" w-full rounded-xl bg-black/60 overflow-hidden">
+          <div className="w-full rounded-xl bg-black/60 overflow-hidden">
             <MatrixBanner />
           </div>
         </div>
@@ -138,7 +134,7 @@ function BlogPosts() {
           Inisghts for Tech, Mind, and Business
         </h3>
       </div>
-      <ul className="grid sm:grid-cols-4 grid-cols-1 gap-4 w-full place-items-center">
+      <ul className="grid sm:grid-cols-4 grid-cols-1 gap-4 w-full sm:px-0 px-4 sm:pb-0 pb-4 place-items-center">
         {isLoading ? (
           <div className="flex col-span-4 justify-center items-center w-full p-10">
             <div className="loader w-full"></div>

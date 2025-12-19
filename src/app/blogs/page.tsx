@@ -7,8 +7,8 @@ import { useLanguage } from "@/context/LanguageContext";
 function page() {
   const { lang, toggleLanguage } = useLanguage();
   return (
-    <div className="bg-blue-950 text-white h-screen overflow-auto flex flex-col p-10">
-     <div className="flex justify-between items-center">
+    <div className="bg-blue-950 text-white h-screen overflow-auto flex flex-col">
+     <div className="flex justify-between items-center p-10">
         <MainNav />
         <button
           onClick={toggleLanguage}
