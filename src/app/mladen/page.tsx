@@ -203,7 +203,7 @@ export default function ProjectIntakeForm() {
 
       <button
         type="submit"
-        className="w-full bg-black text-white py-3 rounded hover:opacity-90 transition"
+        className="w-full bg-black text-white py-3 rounded hover:opacity-90 transition cursor-pointer"
       >
         Submit Project Details
       </button>
