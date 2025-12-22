@@ -23,7 +23,6 @@ export default function ProjectIntakeForm() {
     <form
       action="https://usebasin.com/f/2efa799ea8ea"
       method="POST"
-      onSubmit={handleSubmit}
       className="space-y-10 max-w-3xl mx-auto border p-10"
     >
       {/* Big Picture & Goals */}
