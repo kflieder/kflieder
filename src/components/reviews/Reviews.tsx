@@ -23,7 +23,7 @@ export default function Reviews() {
     "/brookeReview.png",
   ]
 
-  const totalSlides = reviews.length + reviewImages.length;
+  const totalSlides = (reviews.length ?? 0) + (reviewImages.length ?? 0);
 
   
 
@@ -31,7 +31,7 @@ export default function Reviews() {
     fetch("/api/google")
       .then((res) => res.json())
       .then((data) => {
-        setReviews(data.reviews);
+        setReviews(Array.isArray(data.reviews) ? data.reviews : []);
         setLoading(false);
       });
   }, []);
