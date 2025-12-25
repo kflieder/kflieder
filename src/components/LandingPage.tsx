@@ -12,6 +12,7 @@ import { FaArrowCircleDown } from "react-icons/fa";
 import WhatsApp from "./WhatsApp";
 import { useLanguage } from "@/context/LanguageContext";
 import MainNav from "./MainNav";
+import Reviews from "./reviews/Reviews";
 
 const myFont = Barlow({
   subsets: ["latin"],
@@ -55,30 +56,34 @@ function LandingPage() {
   }`;
 
   return (
-    <div className="relative bg-blue-950 w-full h-screen grid grid-cols-1 sm:grid-cols-2 text-white overflow-auto scrollbar-hide">
-      <div className="relative flex flex-col justify-start gap-8 lg:justify-around p-10 border-r border-white/40 sm:mb-10">
+    <div className="relative bg-blue-950 w-full h-screen grid grid-cols-1 sm:grid-cols-2 text-white overflow-auto sm:overflow-hidden">
+      <div className="relative flex flex-col justify-start gap-8 lg:justify-around sm:p-10 pb-15 border-r border-white/40 sm:mb-10">
         <MainNav />
-        <div className="flex sm:flex-col justify-between items-center sm:items-start w-full gap-y-2">
-          
-          <h1 className="text-5xl font-bold w-auto shrink-0">
-            Kacey <br className="block sm:hidden" /> Flieder
-          </h1>
-          <FaArrowCircleDown
-            onClick={handleScroll}
-            className="text-2xl animate-bounce sm:hidden flex"
-            size={54}
-          />
-          <h2 className="text-2xl opacity-90 sm:block hidden">
+        <div className="flex sm:flex-row flex-col justify-center items-center sm:items-start gap-6 sm:gap-0">
+          <div className="flex flex-col justify-around items-center sm:items-start w-full gap-4">
+            <h1 className="text-4xl font-bold w-auto shrink-0">
+              Kacey Flieder
+            </h1>
+            <h2 className="text-2xl opacity-90 block sm:hidden">
             {t("role", lang)}
           </h2>
+            <FaArrowCircleDown
+              onClick={handleScroll}
+              className="text-2xl animate-bounce sm:hidden flex"
+              size={54}
+            />
+            <h2 className="text-xl opacity-90 sm:block hidden">
+              {t("role", lang)}
+            </h2>
+            <WhatsApp />
+          </div>
+          
+
+          <TechStack />
         </div>
-        <h2 className="text-2xl opacity-90 sm:hidden block">
-          {t("role", lang)}
-        </h2>
-        <div>
-          <WhatsApp />
-        </div> 
-        <TechStack />
+
+        <Reviews />
+
         <Socials />
       </div>
       <button
@@ -94,18 +99,16 @@ function LandingPage() {
             className={`text-5xl py-6 lg:py-10 uppercase tracking-widest font-thin text-center w-full ${
               animateOut ? "fade-scale-out" : "fade-scale-in"
             } ${
-              activeTab !== "contact" && activeTab !== "about"
-                ? "text-6xl"
-                : ""
+              activeTab !== "contact" && activeTab !== "about" ? "text-6xl" : ""
             } ${myFont.className}`}
           >
             {activeTab === "projects"
               ? t("projects", lang)
               : activeTab === "prices"
-              ? t("prices", lang)
-              : activeTab === "about"
-              ? t("about", lang)
-              : t("contact", lang)}
+                ? t("prices", lang)
+                : activeTab === "about"
+                  ? t("about", lang)
+                  : t("contact", lang)}
           </h1>
           <div ref={contentRef} className="w-full">
             <NavBar setActiveTab={handleTabChange} activeTab={activeTab} />
@@ -120,7 +123,7 @@ function LandingPage() {
           <div
             id="prices"
             ref={innerContentRef}
-            className={`${contentDivClass}`}
+            className={`${contentDivClass} mb-20`}
           >
             <Prices setActiveTab={handleTabChange} activeTab={activeTab} />
           </div>

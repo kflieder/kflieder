@@ -12,7 +12,7 @@ function MainNav() {
     const activeNavElStyle = "text-lg font-medium border-b-2 border-white";
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 sm:p-0 p-4">
       <Link href='/' className={`${pathname === '/' ? activeNavElStyle : navElStyle}`}>Home</Link>
       <Link href='/blogs'  className={`${pathname === '/blogs' ? activeNavElStyle : navElStyle}`}>Blog</Link>
     </div>
