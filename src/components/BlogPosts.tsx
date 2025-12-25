@@ -123,7 +123,7 @@ function BlogPosts() {
         /> */}
         <div className="absolute inset-0 star-bg rounded-xl"></div>
 
-        <div className="h-[20vh] overflow-hidden rounded-xl">
+        <div className="h-[20vh] overflow-hidden rounded-none sm:rounded-xl">
           <div className="w-full rounded-none sm:rounded-xl bg-black/60 overflow-hidden">
             <MatrixBanner />
           </div>
