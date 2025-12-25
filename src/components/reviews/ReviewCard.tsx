@@ -15,7 +15,7 @@ export default function ReviewCard({
     <div className="flex flex-col gap-2 border rounded border-white/50 p-4 bg-white/5 shadow-md max-h-96 overflow-y-auto scrollbar-ultra-thin text-lg">
       <div className='flex justify-between items-center mb-2 border-b pb-2 border-white/50'>
         <strong>{author}</strong>
-        <a href="https://share.google/TWObAsOPtaiLha5Gq" target="_blank" className="underline underline-offset-2 cursor-pointer">
+        <a href="https://share.google/TWObAsOPtaiLha5Gq" target="_blank" className="underline underline-offset-2 cursor-pointer hidden sm:block">
         Google Reviews
       </a>
         {rating && (
@@ -31,7 +31,12 @@ export default function ReviewCard({
       </div>
 
       {text && <p>{text}</p>}
+      <div className='flex justify-between'>
       {time && <small>{time}</small>}
+      <a href="https://share.google/TWObAsOPtaiLha5Gq" target="_blank" className="underline underline-offset-2 cursor-pointer sm:hidden block">
+        Google Reviews
+      </a>
+      </div>
       
     </div>
   );

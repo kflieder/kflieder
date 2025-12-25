@@ -36,15 +36,15 @@ export default function Reviews() {
       });
   }, []);
 
-  useEffect(() => {
-    if (totalSlides === 0) return;
+  // useEffect(() => {
+  //   if (totalSlides === 0) return;
 
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => prev === totalSlides - 1 ? 0 : prev + 1);
-    }, 5000);
+  //   const interval = setInterval(() => {
+  //     setActiveIndex((prev) => prev === totalSlides - 1 ? 0 : prev + 1);
+  //   }, 5000);
 
-    return () => clearInterval(interval);
-  }, [totalSlides]);
+  //   return () => clearInterval(interval);
+  // }, [totalSlides]);
 
   if (loading) return <div className='flex w-full justify-center items-center'><div className='loader'></div></div>;
 
