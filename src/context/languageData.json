@@ -188,6 +188,22 @@
   "project_fitness_link": "https://kflieder.github.io/Fitness-Trainer/",
   "project_fitness_image": "/fitnessHome.png",
 
+  
+  "project_econido_title": "Econido.mx",
+  "project_econido_title_es": "Econido.mx",
+  "project_econido_desc": "A production website I actively maintain and update on a monthly basis. Responsibilities include performance optimization, bug fixes, content updates, and ensuring long-term stability and reliability.",
+  "project_econido_desc_es": "Un sitio web en producción que mantengo y actualizo mensualmente. Mis responsabilidades incluyen optimización de rendimiento, corrección de errores, actualizaciones de contenido y garantizar estabilidad y confiabilidad a largo plazo.",
+  "project_econido_link": "https://placeholder-link.com",
+  "project_econido_image": "/placeholder-image.png",
+
+  "project_property_title": "Single Property Website",
+  "project_property_title_es": "Sitio Web de Propiedad Individual",
+  "project_property_desc": "A custom website designed for a single real estate listing. The target audience was 65+, so the UI was intentionally built with clear navigation, large readable text, and a simple, intuitive layout.",
+  "project_property_desc_es": "Un sitio web personalizado para una propiedad inmobiliaria individual. El público objetivo era de 65 años o más, por lo que la interfaz se diseñó con navegación clara, texto grande y legible, y una estructura simple e intuitiva.",
+  "project_property_link": "https://placeholder-link.com",
+  "project_property_image": "/placeholder-image.png",
+
+
   "contact_me_quote": "Contact me for a quote",
   "contact_me_quote_es": "Contáctame para una cotización",
   "sent_whatsapp_message": "Send me a message on",

@@ -7,9 +7,21 @@ function Projects() {
 
   const projects = [
     {
+      title: t("project_econido_title", lang),
+      description: t("project_econido_desc", lang),
+      link: "https://econido.mx/",
+      imageSrc: '/econido.png',
+    },
+    {
+      title: t("project_property_title", lang),
+      description: t("project_property_desc", lang),
+      link: "https://kabila.net/",
+      imageSrc: '/brooke.png',
+    },
+    {
       title: t("project_ecom_title", lang),
       description: t("project_ecom_desc", lang),
-      link: "https://kabila.net/",
+      link: "https://www.casa-sale-in-merida.com/",
       imageSrc: '/lisa-kabila.png',
     },
    
