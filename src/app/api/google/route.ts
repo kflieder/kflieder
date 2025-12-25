@@ -23,7 +23,12 @@ export async function GET() {
             author: r.author_name ?? "Anonymous",
             rating: r.rating ?? 0,
             text: r.text ?? "",
-            time: r.time ?? null,
+            time: new Date(r.time * 1000).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            }),
+            totalRatings: data.result.user_ratings_total ?? null,
           }))
         : [];
 
