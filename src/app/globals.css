@@ -221,3 +221,16 @@
   }
 }
 
+
+.scrollbar-ultra-thin::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar-ultra-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(230, 235, 245, 0.6);
+  border-radius: 9999px;
+}
+
+.scrollbar-ultra-thin::-webkit-scrollbar-track {
+  background: transparent;
+}

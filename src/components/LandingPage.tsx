@@ -56,10 +56,10 @@ function LandingPage() {
   }`;
 
   return (
-    <div className="relative bg-blue-950 w-full h-screen grid grid-cols-1 sm:grid-cols-2 text-white overflow-auto sm:overflow-hidden">
-      <div className="relative flex flex-col justify-start gap-8 lg:justify-around sm:p-10 pb-15 border-r border-white/40 sm:mb-10">
+    <div className="relative bg-blue-950 w-full grid grid-cols-1 sm:grid-cols-2 text-white overflow-auto scrollbar-ultra-thin">
+      <div className="relative flex flex-col justify-start gap-8 lg:justify-around border-r border-white/40 sm:p-10 p-6 h-full">
         <MainNav />
-        <div className="flex sm:flex-row flex-col justify-center items-center sm:items-start gap-6 sm:gap-0">
+        <div className="flex sm:flex-row flex-col justify-center items-center sm:items-start gap-6 sm:gap-0 ">
           <div className="flex flex-col justify-start h-full items-center sm:items-start w-full gap-6">
             <h1 className="text-4xl font-bold w-auto shrink-0">
               Kacey Flieder
