@@ -17,7 +17,7 @@ export default function ReviewCard({
         <strong>{author}</strong>
         {rating && (
           <div className="flex items-center gap-1">
-            {Array.from({ length: Math.round(rating) }).map((_, i) => (
+            {Array.from({ length: Math.round(rating ?? 0) }).map((_, i) => (
               <span key={i} className="text-yellow-400">
                 ★
               </span>
