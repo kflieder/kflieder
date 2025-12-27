@@ -15,13 +15,13 @@ function Projects() {
     {
       title: t("project_property_title", lang),
       description: t("project_property_desc", lang),
-      link: "https://kabila.net/",
+      link: "https://www.casa-sale-in-merida.com/",
       imageSrc: '/brooke.png',
     },
     {
       title: t("project_ecom_title", lang),
       description: t("project_ecom_desc", lang),
-      link: "https://www.casa-sale-in-merida.com/",
+      link: "https://kabila.net/",
       imageSrc: '/lisa-kabila.png',
     },
    
