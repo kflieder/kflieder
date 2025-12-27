@@ -75,8 +75,9 @@
   "ecom_desc": "A complete online store setup for selling products with secure payments and modern design.",
   "ecom_desc_es": "Una tienda en línea completa para vender productos con pagos seguros y un diseño moderno.",
 
-  "ecom_features_1": "1 home page + product page with up to 40 products",
-  "ecom_features_1_es": "1 página principal + página de productos con hasta 40 productos",
+ "ecom_features_1": "CMS integration for product management",
+  "ecom_features_1_es": "Integración de CMS para la gestión de productos",
+
 
   "ecom_features_2": "Product listings and categories",
   "ecom_features_2_es": "Listados de productos y categorías",

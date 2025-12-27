@@ -14,8 +14,8 @@ function Prices({
     {
       title: t("landing_title", lang),
       price: {
-        usd: "100",
-        mxn: "1,800",
+        usd: "175",
+        mxn: "3,000",
       },
       description: t("landing_desc", lang),
       features: [
@@ -29,8 +29,8 @@ function Prices({
     {
       title: t("multi_title", lang),
       price: {
-        usd: "200–400",
-        mxn: "3,600–7,200",
+        usd: "350-875",
+        mxn: "6,000–15,000",
       },
       description: t("multi_desc", lang),
       features: [
@@ -45,8 +45,8 @@ function Prices({
     {
       title: t("ecom_title", lang),
       price: {
-        usd: "400",
-        mxn: "7,200",
+        usd: "1,400",
+        mxn: "25,000",
       },
       description: t("ecom_desc", lang),
       features: [
