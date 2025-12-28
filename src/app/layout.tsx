@@ -77,29 +77,16 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} scrollbar-ultra-thin`}
       >
         {/* Google tag (gtag.js) */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-TBJXTJY75F"
-        />
-
         <Script id="gtag-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-TBJXTJY75F');
+            gtag('config', 'G-F9RJ15X5JJ');
           `}
         </Script>
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-F9RJ15X5JJ"
-        ></Script>
-        <Script>
-          {`  window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-F9RJ15X5JJ');`}
-        </Script>
+
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
