@@ -47,7 +47,7 @@ async function PostPage(props: PostPageProps) {
     strong: (props: any) => <strong>{props.children}</strong>,
     em: (props: any) => <em>{props.children}</em>,
     link: (props: any) => (
-      <a href={props.value.href} target="_blank" rel="noopener noreferrer" className="underline text-blue-500">
+      <a href={props.value.href} target="_blank" rel="noopener" className="underline text-blue-500">
         {props.children}
       </a>
     ),

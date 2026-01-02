@@ -87,6 +87,8 @@ export default function RootLayout({
           `}
         </Script>
 
+        
+
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
