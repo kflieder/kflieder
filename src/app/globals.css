@@ -120,7 +120,7 @@
   background-repeat: repeat;
   background-size: 200px 200px;
   animation: drift 720s linear infinite;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 /* 💫 Neon glow for titles and taglines */

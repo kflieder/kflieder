@@ -60,50 +60,6 @@ function BlogPosts() {
     }, [])
  
 
-  // useEffect(() => {
-  //   async function fetchTranslations() {
-  //     setIsLoading(true);
-  //     try {
-  //       const posts = await client.fetch<Post[]>(POSTS_QUERY, {}, options);
-
-  //       const translatedPosts = await Promise.all(
-  //         posts.map(async (post) => {
-  //           const res = await fetch("/api/posts", {
-  //             method: "POST",
-  //             headers: { "Content-Type": "application/json" },
-  //             body: JSON.stringify({
-  //               slug: post.slug.current,
-  //               targetLang: lang,
-  //             }),
-  //           });
-
-  //           const postImageUrl = post.mainImage
-  //             ? urlFor(post.mainImage)?.fit("clip").auto("format").url()
-  //             : null;
-  //           if (!res.ok) {
-  //             console.error(
-  //               `Failed to fetch translation for post: ${post.slug.current}`
-  //             );
-  //             return post; // Return original post if translation fails
-  //           }
-  //           const data = await res.json();
-  //           return {
-  //             ...post,
-  //             title: data.translated?.title || post.title,
-  //             imageUrl: postImageUrl,
-  //           };
-  //         })
-  //       );
-  //       console.log(posts);
-  //       setTranslatedPosts(translatedPosts);
-  //     } catch (error) {
-  //       console.error("Error fetching translated posts:", error);
-  //     } finally {
-  //       setIsLoading(false);
-  //     }
-  //   }
-  //   fetchTranslations();
-  // }, [lang]);
 
   return (
     <main className="flex flex-col items-center justify-center container mx-auto w-full sm:max-w-6xl sm:p-8">
@@ -121,17 +77,17 @@ function BlogPosts() {
           className="absolute w-full h-[20vh] object-cover rounded-xl opacity-50"
           
         /> */}
-        <div className="absolute inset-0 star-bg rounded-xl"></div>
+        <div className="absolute inset-0 star-bg rounded-xl z-40"></div>
 
-        <div className="h-[20vh] overflow-hidden rounded-none sm:rounded-xl">
-          <div className="w-full rounded-none sm:rounded-xl bg-black/60 overflow-hidden">
+        <div className="h-[20vh] overflow-hidden rounded-none sm:rounded-xl z-45 opacity-35">
+          <div className="w-full rounded-none sm:rounded-xl overflow-hidden ">
             <MatrixBanner />
           </div>
         </div>
         <h3
-          className={`sm:text-2xl text-3xl tracking-widest absolute ${myFont.className}`}
+          className={`sm:text-2xl text-3xl tracking-widest absolute z-50 ${myFont.className}`}
         >
-          Inisghts for Tech, Mind, and Business
+          {lang === "en" ? "Tech, mind, business… and the stories in between." : "Tecnología, mente, negocios... y las historias intermedias."}
         </h3>
       </div>
       <ul className="grid sm:grid-cols-4 grid-cols-1 gap-4 w-full sm:px-0 px-4 sm:pb-0 pb-4 place-items-center">
