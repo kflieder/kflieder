@@ -9,6 +9,7 @@ import { type SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { Kelly_Slab } from "next/font/google";
 import MatrixBanner from "./MatrixBanner";
 import TiltCard from "./TiltCard";
+import NewsletterSignup from "./NewsletterSignup";
 
 type Post = SanityDocument & {
   title: string;
@@ -83,6 +84,7 @@ function BlogPosts() {
           <div className="w-full rounded-none sm:rounded-xl overflow-hidden ">
             <MatrixBanner />
           </div>
+          
         </div>
         <h3
           className={`sm:text-2xl text-3xl tracking-widest absolute z-50 ${myFont.className}`}
@@ -90,6 +92,7 @@ function BlogPosts() {
           {lang === "en" ? "Tech, mind, business… and the stories in between." : "Tecnología, mente, negocios... y las historias intermedias."}
         </h3>
       </div>
+      <NewsletterSignup />
       <ul className="grid sm:grid-cols-4 grid-cols-1 gap-4 w-full sm:px-0 px-4 sm:pb-0 pb-4 place-items-center">
         {isLoading ? (
           <div className="flex col-span-4 justify-center items-center w-full p-10">
