@@ -46,7 +46,7 @@ export default function NewsletterSignup() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col w-1/2 p-4 rounded  gap-4 border border-white/40 bg-white/20 items-center mb-10"
+      className="flex flex-col w-full sm:w-1/2 p-4 rounded  gap-4 border border-white/40 bg-white/20 items-center mb-10"
     >
       <h3 className="text-lg font-semibold mb-2">Sign up to receive updates</h3>
       <div className="flex items-center gap-2">
