@@ -175,13 +175,7 @@
   "project_yournook_link": "https://www.yournook.app",
   "project_yournook_image": "/feedPage.png",
 
-  "project_portfolio_title": "Portfolio Landing Page",
-  "project_portfolio_title_es": "Página de Portafolio",
-  "project_portfolio_desc": "A personal portfolio landing page showcasing a photographer. Built with HTML, CSS, and JavaScript. Features include image galleries, about me section, and contact form.",
-  "project_portfolio_desc_es": "Una página de portafolio personal que muestra un fotógrafo. Construida con HTML, CSS y JavaScript. Incluye galerías de imágenes, sección sobre mí y formulario de contacto.",
-  "project_portfolio_link": "https://kflieder.github.io/PhotographerPortfolio/",
-  "project_portfolio_image": "/photoHome.png",
-
+  
   "project_fitness_title": "Fitness Instructors Landing Page",
   "project_fitness_title_es": "Página de Entrenador Fitness",
   "project_fitness_desc": "A landing page for a fitness instructor to showcase their services and attract clients. Built with html, css, and javascript. Features include service listings, testimonials, and contact form.",
@@ -203,6 +197,16 @@
   "project_property_desc_es": "Un sitio web personalizado para una propiedad inmobiliaria individual. El público objetivo era de 65 años o más, por lo que la interfaz se diseñó con navegación clara, texto grande y legible, y una estructura simple e intuitiva.",
   "project_property_link": "https://placeholder-link.com",
   "project_property_image": "/placeholder-image.png",
+
+  "project_wc_title": "Worthy Causes",
+  "project_wc_title_es": "Causas Dignas",
+  "project_wc_desc": "A clean, conversion-focused landing page designed for a charitable organization.",
+  "project_wc_desc_es": "Una landing page limpia y optimizada para conversiones, diseñada para una organización benéfica.",
+
+  "project_db_title": "Dandelion Balloons",
+  "project_db_title_es": "Dandelion Balloons",
+  "project_db_desc": "A fully custom, brand-driven website for Dandelion Consulting featuring a cinematic logo reveal on initial load, immersive video backgrounds, scroll-activated motion elements, and seamless user interaction. The site includes animated motion components, a structured services sub-navigation with internal page anchors, Calendly integration, a custom contact form, and a dynamic media carousel — all thoughtfully executed within the client’s established visual identity.",
+  "project_db_desc_es": "Un sitio web totalmente personalizado y alineado con la identidad de marca para Dandelion Consulting, que incluye una introducción cinematográfica del logotipo al cargar, fondos de video inmersivos y elementos animados activados por scroll. El sitio integra componentes con animaciones fluidas, un submenú estructurado en la sección de servicios con navegación interna, integración con Calendly, un formulario de contacto personalizado y un carrusel multimedia dinámico, todo cuidadosamente ejecutado dentro de la identidad visual establecida por la cliente.",
 
 
   "contact_me_quote": "Contact me for a quote",

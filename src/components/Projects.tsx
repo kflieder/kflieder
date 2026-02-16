@@ -7,10 +7,22 @@ function Projects() {
 
   const projects = [
     {
+      title: t("project_db_title", lang),
+      description: t("project_db_desc", lang),
+      link: "https://dandelionballoons.com/",
+      imageSrc: '/db.png',
+    },
+    {
       title: t("project_econido_title", lang),
       description: t("project_econido_desc", lang),
       link: "https://econido.mx/",
       imageSrc: '/econido.png',
+    },
+    {
+      title: t("project_wc_title", lang),
+      description: t("project_wc_desc", lang),
+      link: "https://www.worthycauses.info/",
+      imageSrc: '/wc.png',
     },
     {
       title: t("project_property_title", lang),
@@ -23,13 +35,6 @@ function Projects() {
       description: t("project_ecom_desc", lang),
       link: "https://kabila.net/",
       imageSrc: '/lisa-kabila.png',
-    },
-   
-    {
-      title: t("project_portfolio_title", lang),
-      description: t("project_portfolio_desc", lang),
-      link: "https://kflieder.github.io/PhotographerPortfolio/",
-      imageSrc: "/photoHome.png",
     },
     {
       title: t("project_fitness_title", lang),
@@ -62,13 +67,13 @@ function Projects() {
               alt={project.title}
               className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/25 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </div>
 
             <div className="mt-4 flex items-start justify-between gap-3 px-2">
               <div>
               <h3 className="text-lg font-semibold tracking-tight">{project.title}</h3>
-              <p className="mt-1 text-sm text-white/70">
+              <p className="my-2 text-sm text-white/70">
                 {project.description}
               </p>
               </div>
